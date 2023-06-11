@@ -73,7 +73,7 @@ server.get('/register', (req, res) => {
 
 })
 
-server.post('/validateRegistration', async (req, res) => {
+server.post('/checkUser', async (req, res) => {
     res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
     res.setHeader('Pragma', 'no-cache');
     res.setHeader('Expires', '0');
@@ -116,21 +116,26 @@ server.post('/validateRegistration', async (req, res) => {
 });
 
 
-server.post('/login', (req, res) => {
+server.post('/login', async (req, res) => {
     res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
     res.setHeader('Pragma', 'no-cache');
     res.setHeader('Expires', '0');
 
-    const loginUserEmail = req.body.email
-    const loginUserPassword = req.body.password
+    const isEmail = req.body.email;
+    const isPassword = req.body.password;
 
+    const user = await Users.findOne({ email: isEmail });
 
+    if (!user) {
+        return res.json({ errors: { email: 'Email does not exist' } });
+    }
 
-    res.json(req.body)
+    if (user.password !== isPassword) {
+        return res.json({ errors: { password: 'Incorrect password' } });
+    }
 
+    res.json({ success: true });
 });
-
-
 
 server.listen(8080, () => {
     console.log('Server Connected');

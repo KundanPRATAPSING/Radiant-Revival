@@ -130,7 +130,7 @@ export default function SignUp() {
 
     async function existingUser(users) {
         try {
-            const isUser = await fetch('http://localhost:8080/validateRegistration', {
+            const isUser = await fetch('http://localhost:8080/checkUser', {
                 method: 'POST',
                 body: JSON.stringify(users),
                 headers: {

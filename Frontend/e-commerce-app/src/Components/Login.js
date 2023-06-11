@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./css/Login.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export default function Login() {
+    const navigate = useNavigate();
     const location = useLocation();
     const isFromSignUp = location.state && location.state.fromSignUp;
     const [loginUser, setLoginUser] = useState({
@@ -11,6 +12,7 @@ export default function Login() {
     });
     const [loginErrors, setLoginErrors] = useState({});
     const [isUser, setIsUser] = useState(false);
+    const [toggleShowPassword,setToggleShowPassword] = useState(false)
 
     function handleChange(e) {
         const { name, value } = e.target;
@@ -22,44 +24,25 @@ export default function Login() {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        setLoginErrors(validateLogin(loginUser));
 
-        if (Object.keys(loginErrors).length === 0) {
-            const timestamp = Date.now();
-            const url = `http://localhost:8080/login?timestamp=${timestamp}`;
+        const [isValidLoginError , isValidUserError] = await Promise.all([
+            validateLogin(loginUser),
+            validateUser(loginUser)
+        ]);
 
-            try {
-                const response = await fetch(url, {
-                    method: "POST",
-                    body: JSON.stringify(loginUser),
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                });
+        // Check if validationErrors and existingUserErrors are defined
+        const hasLoginErrors = isValidLoginError && Object.keys(isValidLoginError).length > 0;
+        const hasUserErrors = isValidUserError && Object.keys(isValidUserError).length > 0;
 
-                if (response.ok) {
+        setLoginErrors({
+            ...isValidLoginError,
+            ...isValidUserError
+        });
 
-                    // send loginUser 
-                    const userData = await response.json();
-
-                    
-
-                    setIsUser(true)
-
-                } else if (response.status === 304) {
-                    console.log("Retrying login...");
-                    await handleSubmit(e); // Recursive call to handleSubmit function
-                } else {
-                    // Handle server-side error
-                    throw new Error("Server error");
-                }
-            } catch (error) {
-                // Handle network error or server-side error
-                console.log("Error:", error.message);
-            }
+        if (!hasLoginErrors && !hasUserErrors && !isUser) {
+            setIsUser(true)
         }
     }
-
 
     useEffect(() => {
         const handleBeforeUnload = (event) => {
@@ -78,10 +61,15 @@ export default function Login() {
 
 
     useEffect(() => {
-        if (Object.keys(loginErrors).length === 0 && isUser) {
-            console.log(loginUser);
+       if (Object.keys(loginErrors).length === 0 && isUser) {
+            try {
+                 navigate("/home", { state: { fromSignUp: true } });
+            } catch (error) {
+                // Handle navigation error
+                console.error("Error occurred during navigation:", error);
+            }
         }
-    }, [loginErrors, isUser, loginUser]);
+    }, [loginErrors, isUser, navigate]);
 
     function validateLogin(loginUser) {
         const errors = {};
@@ -98,6 +86,34 @@ export default function Login() {
         }
 
         return errors;
+    }
+
+    async function validateUser(loginUser){
+        try {
+            const isUser = await fetch('http://localhost:8080/login', {
+                method: 'POST',
+                body: JSON.stringify(loginUser),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (isUser.ok) {
+                const response = await isUser.json();
+                return response.errors;
+            }
+            else {
+                throw new Error("Validation request failed");
+            }
+        }
+        catch (error) {
+            console.error("Error during validation:", error.message);
+            throw error;
+        }
+    }
+
+    function handleToggleShowPassword(){
+        setToggleShowPassword(!toggleShowPassword)
     }
 
     return (
@@ -173,7 +189,7 @@ export default function Login() {
                                         <span>Password*</span>
                                     </label>
                                     <input
-                                        type="password"
+                                        type={toggleShowPassword ? "text" : "password"}
                                         className="input"
                                         id="loginPassword"
                                         placeholder="Enter your Password"
@@ -197,6 +213,7 @@ export default function Login() {
                                             type="checkbox"
                                             id="login_show_password"
                                             className="checkbox"
+                                            onClick={handleToggleShowPassword}
                                         />
                                         <label htmlFor="login_show_password">Show Password</label>
                                     </div>
