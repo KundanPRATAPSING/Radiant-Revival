@@ -33,12 +33,16 @@ export default function SignUp() {
             existingUser(user)
         ]);
 
+        // Check if validationErrors and existingUserErrors are defined
+        const hasValidationErrors = validationErrors && Object.keys(validationErrors).length > 0;
+        const hasExistingUserErrors = existingUserErrors && Object.keys(existingUserErrors).length > 0;
+
         setFormErrors({
             ...validationErrors,
             ...existingUserErrors
         });
 
-        if (Object.keys(formErrors).length === 0 && !isSubmit) {
+        if (!hasValidationErrors && !hasExistingUserErrors && !isSubmit) {
             try {
                 const response = await fetch("http://localhost:8080/register", {
                     method: "POST",
@@ -137,11 +141,11 @@ export default function SignUp() {
             if (isUser.ok) {
                 const response = await isUser.json();
                 return response.errors;
-            } 
+            }
             else {
                 throw new Error("Validation request failed");
             }
-        } 
+        }
         catch (error) {
             console.error("Error during validation:", error.message);
             throw error;
