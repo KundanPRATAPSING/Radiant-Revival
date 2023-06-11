@@ -25,15 +25,48 @@ export default function SignUp() {
     setUser({ ...user, [name]: value });
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     setFormErrors(validate(user));
     setIsSubmit(true);
+
+    if (isSubmit) {
+      const response = await fetch("http://localhost:8080/register", {
+        method: "POST",
+        body: JSON.stringify(user),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+        // recieve data from api
+        await response.json();
+    }
   }
 
   useEffect(() => {
+    const handleBeforeUnload = (event) => {
+      if (Object.keys(formErrors).length > 0) {
+        event.preventDefault();
+        event.returnValue = ""; // Required for Chrome and legacy browsers
+      }
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, [formErrors]);
+
+  useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmit) {
-      navigate("/login", { state: { fromSignUp: true } });
+      try {
+        navigate("/login", { state: { fromSignUp: true } });
+      } catch (error) {
+        // Handle navigation error
+        console.error("Error occurred during navigation:", error);
+      }
     }
   }, [formErrors, isSubmit, user, navigate]);
 
