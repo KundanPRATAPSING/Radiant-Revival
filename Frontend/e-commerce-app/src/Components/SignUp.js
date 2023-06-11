@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Login.css";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function SignUp() {
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     name: "",
     username: "",
@@ -31,9 +33,9 @@ export default function SignUp() {
 
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(user);
+      navigate("/login", { state: { fromSignUp: true } });
     }
-  }, [formErrors, isSubmit, user]);
+  }, [formErrors, isSubmit, user, navigate]);
 
   function validate(users) {
     const errors = {};
@@ -107,14 +109,6 @@ export default function SignUp() {
                 Welcome to <b>The Inventory Emporium!</b> Please Enter your
                 Details
               </header>
-
-              {Object.keys(formErrors).length === 0 && isSubmit ? (
-                <div className="alert alert-info" role="alert">
-                  Account Created Successfully
-                </div>
-              ) : (
-                ""
-              )}
 
               {/* Form  */}
               <form onSubmit={handleSubmit}>
@@ -224,9 +218,11 @@ export default function SignUp() {
                 </div>
 
                 {/* Display Format  */}
-                {!formErrors.phoneNumber && formErrors.length && <div className="alert alert-warning" role="alert">
+                {!formErrors.phoneNumber && formErrors.length && (
+                  <div className="alert alert-warning" role="alert">
                     (Country Code) Phone Number
-                </div>}
+                  </div>
+                )}
 
                 {/* Display Error Message  */}
                 {formErrors.phoneNumber && (
@@ -351,14 +347,14 @@ export default function SignUp() {
                 <header className="subHeader">
                   <p>
                     Already a member?
-                    <a
+                    <Link
                       className="btn btn-outline-dark mx-1 my-2"
-                      href="/"
+                      to="/login"
                       role="button"
                       id="direct_login"
                     >
                       Login
-                    </a>
+                    </Link>
                   </p>
                 </header>
               </form>
