@@ -25,14 +25,20 @@ export default function SignUp() {
         setUser({ ...user, [name]: value });
     }
 
-    // ...
-
     async function handleSubmit(e) {
         e.preventDefault();
-        setFormErrors(validate(user));
-        setIsSubmit(true);
 
-        if (isSubmit) {
+        const [validationErrors, existingUserErrors] = await Promise.all([
+            validate(user),
+            existingUser(user)
+        ]);
+
+        setFormErrors({
+            ...validationErrors,
+            ...existingUserErrors
+        });
+
+        if (Object.keys(formErrors).length === 0 && !isSubmit) {
             try {
                 const response = await fetch("http://localhost:8080/register", {
                     method: "POST",
@@ -45,7 +51,7 @@ export default function SignUp() {
                 if (response.ok) {
                     const userData = await response.json();
                     console.log(userData);
-                    navigate("/login", { state: { fromSignUp: true } });
+                    setIsSubmit(true); // Set the flag to true upon successful submission
                 } else {
                     throw new Error("Signup request failed");
                 }
@@ -54,8 +60,6 @@ export default function SignUp() {
             }
         }
     }
-
-    // ...
 
     useEffect(() => {
         const handleBeforeUnload = (event) => {
@@ -88,6 +92,8 @@ export default function SignUp() {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
         const phoneRegex = /^\+?\d{1,3}[-.\s]?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/;
 
+        // Initial checking 
+
         if (users.name === "") {
             errors.name = "Name is required!";
         }
@@ -117,6 +123,31 @@ export default function SignUp() {
 
         return errors;
     }
+
+    async function existingUser(users) {
+        try {
+            const isUser = await fetch('http://localhost:8080/validateRegistration', {
+                method: 'POST',
+                body: JSON.stringify(users),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (isUser.ok) {
+                const response = await isUser.json();
+                return response.errors;
+            } 
+            else {
+                throw new Error("Validation request failed");
+            }
+        } 
+        catch (error) {
+            console.error("Error during validation:", error.message);
+            throw error;
+        }
+    }
+
 
     function showPassword() {
         let initialPasswordState = togglePassword;

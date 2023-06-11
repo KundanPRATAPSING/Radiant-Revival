@@ -38,8 +38,14 @@ export default function Login() {
                 });
 
                 if (response.ok) {
+
+                    // send loginUser 
                     const userData = await response.json();
-                    console.log(userData);
+
+                    
+
+                    setIsUser(true)
+
                 } else if (response.status === 304) {
                     console.log("Retrying login...");
                     await handleSubmit(e); // Recursive call to handleSubmit function
