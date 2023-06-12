@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Department({skinCareImage, redirectUrl, departmentName}) {
+export default function Department({departmentImage, redirectUrl, departmentName}) {
   return (
     <div className="col-12 col-sm-4 col-lg">
       <a
@@ -9,7 +9,7 @@ export default function Department({skinCareImage, redirectUrl, departmentName})
       >
         <div className="card border-0">
           <img
-            src="https://www.ashleyfurniture.com/on/demandware.static/-/Sites-site-catalog-ashley-us/default/dw9bd05fc1/department-icons/sofas-and-couches.png"
+            src={departmentImage}
             className="card-img-top border border-warning rounded-circle"
             alt="{departmentName}"
           />

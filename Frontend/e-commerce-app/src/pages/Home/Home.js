@@ -10,6 +10,16 @@ export default function Home() {
   const topImage3 = require("../../assets/images/top-image-3.jpg");
   const topImage4 = require("../../assets/images/top-image-4.jpg");
   const topImage5 = require("../../assets/images/top-image-5.jpg");
+  const skinCareImage = require("../../assets/images/skinCare/skinCare0.jpeg")
+  const makeUpImage = require("../../assets/images/makeUp/makeUp0.jpeg")
+  const hairCareImage = require("../../assets/images/hairCare/hairCare0.jpeg")
+  const fragranceImage = require("../../assets/images/fragrance/fragrance0.jpeg")
+  const bodyCareImage = require("../../assets/images/bodyCare/bodyCare0.jpeg")
+  const oralCareImage = require("../../assets/images/oralCare/oralCare0.jpeg")
+  const menGroomingImage = require("../../assets/images/menGrooming/menGrooming0.jpeg")
+  const organicImage = require("../../assets/images/organic/organic0.jpeg")
+  const beautyToolsImage = require("../../assets/images/beautyTools/beautytools0.jpeg")
+  const bodyArtImage = require("../../assets/images/bodyArt/bodyArt0.jpeg")
 
   return (
     <>
@@ -47,35 +57,35 @@ export default function Home() {
         <div className="row justify-content-center">
           {/* <!-- Skincare Department  --> */}
           <Department
-            skinCareImage=""
+            departmentImage={skinCareImage}
             redirectUrl="/home"
             departmentName="Skin Care"
           />
 
           {/* <!-- Makeup Department  --> */}
           <Department
-            makeUpImage=""
+            departmentImage={makeUpImage}
             redirectUrl="/home"
             departmentName="Make Up"
           />
 
           {/* <!-- Haircare Department  --> */}
           <Department
-            hairCareImage=""
+            departmentImage={hairCareImage}
             redirectUrl="/home"
             departmentName="Hair Care"
           />
 
           {/* <!-- Fragrances Department  --> */}
           <Department
-            fragranceImage=""
+            departmentImage={fragranceImage}
             redirectUrl="/home"
             departmentName="Fragrance"
           />
 
           {/* <!-- Bodycare Department  --> */}
           <Department
-            bodyCareImage=""
+            departmentImage={bodyCareImage}
             redirectUrl="/home"
             departmentName="Body Care"
           />
@@ -83,39 +93,39 @@ export default function Home() {
           {/* <!-- Equals the icon size --> */}
           <div className="d-none d-lg-block w-100"></div>
 
-          {/* <!-- Wellness Department  --> */}
+          {/* <!-- Oral Care Department  --> */}
           <Department
-            wellnessImage=""
+            departmentImage={oralCareImage}
             redirectUrl="/home"
-            departmentName="Wellness"
+            departmentName="oralCare"
           />
 
           {/* <!-- Men's Grooming Department  --> */}
           <Department
-            menGroomingImage=""
+            departmentImage={menGroomingImage}
             redirectUrl="/home"
             departmentName="Men Grooming"
           />
 
           {/* <!-- Natural and Organic Department  --> */}
           <Department
-            OrganicImage=""
+            departmentImage={organicImage}
             redirectUrl="/home"
             departmentName="Organic"
           />
 
           {/* <!-- Beauty Tools and Accessories Department  --> */}
           <Department
-            beautyToolsImage=""
+            departmentImage={beautyToolsImage}
             redirectUrl="/home"
             departmentName="Beauty Tools"
           />
 
-          {/* <!-- Beauty Tips and Tutorials Department  --> */}
+          {/* <!-- Body Art  --> */}
           <Department
-            beautyTipsImage=""
+            departmentImage={bodyArtImage}
             redirectUrl="/home"
-            departmentName="Beauty Tips"
+            departmentName="Body Art"
           />
         </div>
       </div>
