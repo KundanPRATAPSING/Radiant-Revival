@@ -7,6 +7,7 @@ main().catch(err => console.log(err));
 
 async function main() {
     await mongoose.connect('mongodb://127.0.0.1:27017/customer');
+    console.log('DB Connected')
 }
 
 const userSchema = new mongoose.Schema({
@@ -69,10 +70,6 @@ server.post('/register', async (req, res) => {
     }
 });
 
-server.get('/register', (req, res) => {
-
-})
-
 server.post('/checkUser', async (req, res) => {
     res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
     res.setHeader('Pragma', 'no-cache');
@@ -114,7 +111,6 @@ server.post('/checkUser', async (req, res) => {
     }
 
 });
-
 
 server.post('/login', async (req, res) => {
     res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
