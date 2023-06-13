@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../../components/Header/Navbar";
 import Carousel from "./Carousel";
 import Banner from "./Banner";
@@ -10,16 +10,28 @@ export default function Home() {
   const topImage3 = require("../../assets/images/top-image-3.jpg");
   const topImage4 = require("../../assets/images/top-image-4.jpg");
   const topImage5 = require("../../assets/images/top-image-5.jpg");
-  const skinCareImage = require("../../assets/images/skinCare/skinCare0.jpeg")
-  const makeUpImage = require("../../assets/images/makeUp/makeUp0.jpeg")
-  const hairCareImage = require("../../assets/images/hairCare/hairCare0.jpeg")
-  const fragranceImage = require("../../assets/images/fragrance/fragrance0.jpeg")
-  const bodyCareImage = require("../../assets/images/bodyCare/bodyCare0.jpeg")
-  const oralCareImage = require("../../assets/images/oralCare/oralCare0.jpeg")
-  const menGroomingImage = require("../../assets/images/menGrooming/menGrooming0.jpeg")
-  const organicImage = require("../../assets/images/organic/organic0.jpeg")
-  const beautyToolsImage = require("../../assets/images/beautyTools/beautytools0.jpeg")
-  const bodyArtImage = require("../../assets/images/bodyArt/bodyArt0.jpeg")
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Images section
+  const skinCareImage = require("../../assets/images/skinCare/skinCare0.jpeg");
+  const makeUpImage = require("../../assets/images/makeUp/makeUp0.jpeg");
+  const hairCareImage = require("../../assets/images/hairCare/hairCare0.jpeg");
+  const fragranceImage = require("../../assets/images/fragrance/fragrance0.jpeg");
+  const bodyCareImage = require("../../assets/images/bodyCare/bodyCare0.jpeg");
+  const oralCareImage = require("../../assets/images/oralCare/oralCare0.jpeg");
+  const menGroomingImage = require("../../assets/images/menGrooming/menGrooming0.jpeg");
+  const organicImage = require("../../assets/images/organic/organic0.jpeg");
+  const beautyToolsImage = require("../../assets/images/beautyTools/beautytools0.jpeg");
+  const bodyArtImage = require("../../assets/images/bodyArt/bodyArt0.jpeg");
+
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % 5); 
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval); // Clean up the interval on component unmount
+  }, [currentImageIndex]);
 
   return (
     <>
@@ -33,12 +45,13 @@ export default function Home() {
         className="carousel slide carousel-fade"
         data-ride="carousel"
       >
+        {/* Set a timer of 5 sec to change the images in the carousel  */}
         <div className="carousel-inner">
-          <Carousel image={topImage1} />
-          <Carousel image={topImage2} />
-          <Carousel image={topImage3} />
-          <Carousel image={topImage4} />
-          <Carousel image={topImage5} />
+          <Carousel image={topImage1} isActive = {currentImageIndex === 1}/>
+          <Carousel image={topImage2} isActive = {currentImageIndex === 2}/>
+          <Carousel image={topImage3} isActive = {currentImageIndex === 3}/>
+          <Carousel image={topImage4} isActive = {currentImageIndex === 4}/>
+          <Carousel image={topImage5} isActive = {currentImageIndex === 5}/>
         </div>
       </div>
 
@@ -58,35 +71,35 @@ export default function Home() {
           {/* <!-- Skincare Department  --> */}
           <Department
             departmentImage={skinCareImage}
-            redirectUrl="/home"
+            redirectUrl = "/skinCare"
             departmentName="Skin Care"
           />
 
           {/* <!-- Makeup Department  --> */}
           <Department
             departmentImage={makeUpImage}
-            redirectUrl="/home"
+            redirectUrl = "/makeUp"
             departmentName="Make Up"
           />
 
           {/* <!-- Haircare Department  --> */}
           <Department
             departmentImage={hairCareImage}
-            redirectUrl="/home"
+            redirectUrl = "/hairCare"
             departmentName="Hair Care"
           />
 
           {/* <!-- Fragrances Department  --> */}
           <Department
             departmentImage={fragranceImage}
-            redirectUrl="/home"
+            redirectUrl = "/fragrance"
             departmentName="Fragrance"
           />
 
           {/* <!-- Bodycare Department  --> */}
           <Department
             departmentImage={bodyCareImage}
-            redirectUrl="/home"
+            redirectUrl = "/bodyCare"
             departmentName="Body Care"
           />
 
@@ -96,35 +109,35 @@ export default function Home() {
           {/* <!-- Oral Care Department  --> */}
           <Department
             departmentImage={oralCareImage}
-            redirectUrl="/home"
+            redirectUrl = "/oralCare"
             departmentName="oralCare"
           />
 
           {/* <!-- Men's Grooming Department  --> */}
           <Department
             departmentImage={menGroomingImage}
-            redirectUrl="/home"
+            redirectUrl = "/menGrooming"
             departmentName="Men Grooming"
           />
 
           {/* <!-- Natural and Organic Department  --> */}
           <Department
             departmentImage={organicImage}
-            redirectUrl="/home"
+            redirectUrl = "/organic"
             departmentName="Organic"
           />
 
           {/* <!-- Beauty Tools and Accessories Department  --> */}
           <Department
             departmentImage={beautyToolsImage}
-            redirectUrl="/home"
+            redirectUrl = "/beautyTools"
             departmentName="Beauty Tools"
           />
 
           {/* <!-- Body Art  --> */}
           <Department
             departmentImage={bodyArtImage}
-            redirectUrl="/home"
+            redirectUrl = "/bodyArt"
             departmentName="Body Art"
           />
         </div>
@@ -215,7 +228,6 @@ export default function Home() {
       </a>
       {/* <!-- scroll end --> */}
 
-
       {/* <!-- loading start --> */}
       <div className="loader-wrapper">
         <div className="loader-inner">
@@ -225,8 +237,6 @@ export default function Home() {
         </div>
       </div>
       {/* <!-- loading end --> */}
-
-      
     </>
   );
 }

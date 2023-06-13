@@ -37,7 +37,7 @@ export default function Navbar() {
                 {/* <!-- Profile  --> */}
                 <a
                   className="dropdown-item"
-                  href="{{url_for('profile')}}"
+                  href="/profile"
                   id="flask_profile"
                 >
                   Profile

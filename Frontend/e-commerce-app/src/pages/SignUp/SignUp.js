@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
+import { ReactSession } from 'react-client-session';
+
+ReactSession.setStoreType("localStorage");
 
 export default function SignUp() {
   const navigate = useNavigate();

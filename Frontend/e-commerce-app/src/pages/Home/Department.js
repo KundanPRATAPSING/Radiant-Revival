@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Department({departmentImage, redirectUrl, departmentName}) {
+export default function Department({departmentImage, departmentName, redirectUrl }) {
   return (
     <div className="col-12 col-sm-4 col-lg">
       <a

@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function Carousel({image}) {
+export default function Carousel({image,isActive}) {
   return (
-      <div className="carousel-item active" data-interval="5000">
+      <div className={`carousel-item${isActive ? " active" : ""}`}>
         <img
           src = {image}
           className="d-block vw-100"
