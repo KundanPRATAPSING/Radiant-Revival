@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
-import { ReactSession } from 'react-client-session';
-
-ReactSession.setStoreType("localStorage");
+import { saveSessionData, getSessionData } from "../Session/Session";
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -22,6 +20,8 @@ export default function SignUp() {
 
   const [togglePassword, setTogglePassword] = useState(false);
   const [toggleConfirmPassword, setToggleConfirmPassword] = useState(false);
+
+  const userSession = getSessionData('userSession')
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -58,8 +58,7 @@ export default function SignUp() {
         });
 
         if (response.ok) {
-          const userData = await response.json();
-          console.log(userData);
+          saveSessionData('userSession', { email: user.email })
           setIsSubmit(true); // Set the flag to true upon successful submission
         } else {
           throw new Error("Signup request failed");
@@ -88,13 +87,14 @@ export default function SignUp() {
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmit) {
       try {
-        navigate("/login", { state: { fromSignUp: true } });
+        console.log(userSession)
+        navigate("/", { state: { fromSignUp: true } });
       } catch (error) {
         // Handle navigation error
         console.error("Error occurred during navigation:", error);
       }
     }
-  }, [formErrors, isSubmit, user, navigate]);
+  }, [formErrors, isSubmit, user, navigate, userSession]);
 
   function validate(users) {
     const errors = {};
@@ -431,7 +431,7 @@ export default function SignUp() {
                     Already a member?
                     <Link
                       className="btn btn-outline-dark mx-1 my-2"
-                      to="/login"
+                      to="/"
                       role="button"
                       id="direct_login"
                     >

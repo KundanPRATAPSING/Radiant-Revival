@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, {useEffect, useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
 import "../../pages/Home/Home.css";
+import { getSessionData } from '../../pages/Session/Session';
 
 export default function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -7,6 +9,15 @@ export default function Navbar() {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  const user = getSessionData('userSession')
+  const navigate = useNavigate()
+
+    useEffect(() => {
+        if(user === null){
+            navigate('/', {replace: true})
+        }
+    },[navigate,user])
 
   return (
     <>
@@ -35,28 +46,28 @@ export default function Navbar() {
                 aria-labelledby="dropdownMenuButton"
               >
                 {/* <!-- Profile  --> */}
-                <a
+                <Link
                   className="dropdown-item"
-                  href="/profile"
+                  to="/profile"
                   id="flask_profile"
                 >
                   Profile
-                </a>
+                </Link>
 
-                <a className="dropdown-item" href="{{url_for('myorders')}}">
+                <Link className="dropdown-item" to="{{url_for('myorders')}}">
                   My orders
-                </a>
-                <a className="dropdown-item" href="{{url_for('settings')}}">
+                </Link>
+                <Link className="dropdown-item" to="{{url_for('settings')}}">
                   Account Settings
-                </a>
+                </Link>
                 {/* <!-- Logout  --> */}
-                <a
+                <Link
                   className="dropdown-item"
-                  href="{{url_for('logout')}}"
+                  to="/logout"
                   id="flask_logout"
                 >
                   Logout
-                </a>
+                </Link>
               </div>
             </div>
           </div>

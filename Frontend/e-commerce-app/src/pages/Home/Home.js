@@ -24,7 +24,6 @@ export default function Home() {
   const beautyToolsImage = require("../../assets/images/beautyTools/beautytools0.jpeg");
   const bodyArtImage = require("../../assets/images/bodyArt/bodyArt0.jpeg");
 
-
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % 5); 
@@ -47,11 +46,11 @@ export default function Home() {
       >
         {/* Set a timer of 5 sec to change the images in the carousel  */}
         <div className="carousel-inner">
-          <Carousel image={topImage1} isActive = {currentImageIndex === 1}/>
-          <Carousel image={topImage2} isActive = {currentImageIndex === 2}/>
-          <Carousel image={topImage3} isActive = {currentImageIndex === 3}/>
-          <Carousel image={topImage4} isActive = {currentImageIndex === 4}/>
-          <Carousel image={topImage5} isActive = {currentImageIndex === 5}/>
+          <Carousel image={topImage1} isActive = {currentImageIndex === 0}/>
+          <Carousel image={topImage2} isActive = {currentImageIndex === 1}/>
+          <Carousel image={topImage3} isActive = {currentImageIndex === 2}/>
+          <Carousel image={topImage4} isActive = {currentImageIndex === 3}/>
+          <Carousel image={topImage5} isActive = {currentImageIndex === 4}/>
         </div>
       </div>
 
