@@ -15,6 +15,7 @@ import OralCare from "./pages/Home/OralCare";
 import Organic from "./pages/Home/Organic";
 import Profile from "./pages/Home/Profile";
 import Logout from "./pages/Session/Logout";
+import OrderPreview from "./pages/Home/OrderPreview";
 
 export default function App() {
 
@@ -36,6 +37,7 @@ export default function App() {
         <Route path="/organic" element={<Organic />} />
         <Route path="/skinCare" element={<SkinCare />} />
         <Route path="/logout" element={<Logout />} />
+        <Route path="/orderPreview" element={<OrderPreview />} />
       </Routes>
     </Router>
   );
