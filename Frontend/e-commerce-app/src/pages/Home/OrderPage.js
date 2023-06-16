@@ -1,14 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 
-export default function OrderPage({
-    departmentName,
-    heading,
-    content,
-    imgUrl,
-    imgName,
-    price,
-}) {
+export default function OrderPage({departmentName,heading,content,imgUrl,imgName,price,}) {
     const navigate = useNavigate();
 
     function handleSubmit(e) {
@@ -23,8 +16,8 @@ export default function OrderPage({
             content: formData.get("content"),
             price: formData.get("price"),
         };
-        
-        console.log(orderData)
+
+        console.log(imgUrl);
 
         navigate("/orderPreview", { state: { orderData } });
     }

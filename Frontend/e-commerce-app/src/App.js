@@ -37,7 +37,7 @@ export default function App() {
         <Route path="/organic" element={<Organic />} />
         <Route path="/skinCare" element={<SkinCare />} />
         <Route path="/logout" element={<Logout />} />
-        <Route path="/orderPreview" element={<OrderPreview />} />
+        <Route path="/OrderPreview" element={<OrderPreview />} />
       </Routes>
     </Router>
   );
