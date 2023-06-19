@@ -100,11 +100,11 @@ server.post('/checkUser', async (req, res) => {
     try {
         if (Object.keys(errors).length > 0) {
             res.json({ errors });
-        } 
+        }
         else {
             res.json({ success: true });
         }
-    } 
+    }
     catch (error) {
         console.error('Error validating user:', error);
         res.status(500).json({ error: 'Internal server error' });
@@ -132,6 +132,30 @@ server.post('/login', async (req, res) => {
 
     res.json({ success: true });
 });
+
+server.post('/profile', async (req, res) => {
+  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+  res.setHeader('Pragma', 'no-cache');
+  res.setHeader('Expires', '0');
+
+  const email = req.body.email; // Use req.body.email instead of req.body.sessionEmail
+
+  try {
+    const document = await Users.findOne({ email: email }); // Find the document by email
+
+    if (document) {
+      // Document found, return all information
+      res.json(document);
+    } else {
+      // No document found for the given email
+      res.status(404).json({ error: 'Document not found' });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 
 server.listen(8080, () => {
     console.log('Server Connected');

@@ -16,6 +16,7 @@ import Organic from "./pages/Home/Organic";
 import Profile from "./pages/Home/Profile";
 import Logout from "./pages/Session/Logout";
 import OrderPreview from "./pages/Home/OrderPreview";
+import Settings from "./pages/Settings/Settings";
 
 export default function App() {
 
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/home" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/settings" element={<Settings />} />
         <Route path="/beautyTools" element={<BeautyTools />} />
         <Route path="/bodyArt" element={<BodyArt />} />
         <Route path="/bodyCare" element={<BodyCare />} />

@@ -67,6 +67,7 @@
 .orderPreview__planInfo {
   display: flex;
   align-items: center;
+  justify-content: space-between; /* Add this line */
   padding: 1em;
   margin-bottom: 1.5em;
   border-radius: 1em;
@@ -78,14 +79,21 @@
 }
 
 .orderPreview__planDetail {
-  margin-left: 1.25em;
+  margin-left: -2.75em;
   text-align: start;
+}
+
+.orderPreview__planPrice{
+  margin-top: 0;
+  margin-bottom: 0rem;
+  font-size: xx-large;
+  margin-left: -1.5em;
 }
 
 .orderPreview__planTitle {
   margin-bottom: 0.25em;
   color: hsl(223, 47%, 23%);
-  font-size: 0.9rem;
+  font-size: 1.3rem;
 }
 
 .orderPreview__planBtn,
@@ -100,6 +108,7 @@
   transition: background-color 300ms ease, transform 300ms ease;
   border-radius: 1em;
   opacity: 0.9;
+  
 }
 
 .orderPreview__planBtn:hover,
@@ -142,13 +151,15 @@
 
 .orderPreview__changeBtn:hover {
   color: hsl(245, 75%, 70%);
+  border: none;
+  outline: none;
   text-decoration: none;
 }
 
 /* Attribution Styling */
 
 .orderPreview__attribution {
-  position: fixed;
+  position: relative;
   bottom: 0;
   left: 0;
   right: 0;
@@ -174,3 +185,4 @@
     background-size: contain;
   }
 }
+

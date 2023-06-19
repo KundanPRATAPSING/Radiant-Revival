@@ -1,135 +1,155 @@
-import React from 'react'
-import "../../assets/styles/profile.css"
+import React from "react";
+import "../../assets/styles/profile.css";
+import { Link, useLocation } from "react-router-dom";
 
-export default function Profile() {
-  return (
-    <>
-    {/* <!-- Navbar top --> */}
-    <div class="navbar-top">
-      <div class="title">
-        <h1>Profile</h1>
-      </div>
+export default function Profile(props) {
 
-      {/* <!-- Navbar --> */}
-      <ul>
-        <li>
-          <a href="{{url_for('home')}}">
-            <i class="fa fa-home fa-2x"></i>
-          </a>
-        </li>
-        <li>
-          <a href="{{url_for('logout')}}">
-            <i class="fa fa-sign-out-alt fa-2x"></i>
-          </a>
-        </li>
-      </ul>
-      {/* <!-- End --> */}
-    </div>
-    {/* <!-- End --> */}
+    const location = useLocation();
+    const profileInfo = location.state;
 
-    {/* <!-- Sidenav --> */}
-    <div class="sidenav">
-      <div class="profile">
-        <img
-          src="https://imdezcode.files.wordpress.com/2020/02/imdezcode-logo.png"
-          alt=""
-          width="100"
-          height="100"
-        />
+    return (
+        <>
+            {/* <!-- Navbar top --> */}
+            <div className="navbar-top">
+                <div className="title">
+                    <h1>Profile</h1>
+                </div>
 
-        <div class="name"> UserName </div>
-        <div class="job"> Customer </div>
-      </div>
+                {/* <!-- Navbar --> */}
+                <ul>
+                    <li>
+                        <Link to="/home">
+                            <i className="fa fa-home fa-2x"></i>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/logout">
+                            <i className="fa fa-sign-out-alt fa-2x"></i>
+                        </Link>
+                    </li>
+                </ul>
+                {/* <!-- End --> */}
+            </div>
+            {/* <!-- End --> */}
 
-      <div class="sidenav-url">
-        <div class="url">
-          <a href="{{url_for('profile')}}" class="active">Profile</a>
-          <hr align="center" />
-        </div>
-        <div class="url">
-          <a href="{{url_for('settings')}}">Settings</a>
-          <hr align="center" />
-        </div>
-      </div>
-    </div>
-    {/* <!-- End --> */}
+            {/* <!-- Sidenav --> */}
+            <div className="sidenav">
+                <div className="profile">
+                    <img
+                        src="https://imdezcode.files.wordpress.com/2020/02/imdezcode-logo.png"
+                        alt=""
+                        width="100"
+                        height="100"
+                    />
 
-    {/* <!-- Main --> */}
-    <div class="main">
-      <h2>IDENTITY</h2>
-      <div class="card">
-        <div class="card-body">
-          <i class="fa fa-pen fa-xs edit"></i>
-          <table>
-            <tbody>
-              <tr>
-                <td>Name</td>
-                <td>:</td>
-                <td> Name </td>
-              </tr>
-              <tr>
-                <td>Email</td>
-                <td>:</td>
-                <td> Email </td>
-              </tr>
-              <tr>
-                <td>Address</td>
-                <td>:</td>
-                <td> Address </td>
-              </tr>
-              <tr>
-                <td>Phone Number</td>
-                <td>:</td>
-                <td> Phone Number </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+                    <div className="name"> {profileInfo.username} </div>
+                    <div className="job"> Customer </div>
+                </div>
 
-      <h2>Contact Us</h2>
-      <div class="card">
-        <div class="card-body">
-          <i class="fa fa-pen fa-xs edit"></i>
-          <div class="social-media">
+                <div className="sidenav-url">
+                    <div className="url">
+                        <Link to="/profile" className="active">
+                            Profile
+                        </Link>
+                        <hr align="center" />
+                    </div>
+                    <div className="url">
+                        <Link to = "/settings" state={profileInfo} >Settings</Link>
+                        <hr align="center" />
+                    </div>
+                </div>
+            </div>
+            {/* <!-- End --> */}
 
-            {/* <!-- facebook --> */}
-            <span class="fa-stack fa-sm">
-              <i class="fas fa-circle fa-stack-2x"></i>
-              <a href = "{{url_for('facebook')}}" > <i class="fab fa-facebook fa-stack-1x fa-inverse"></i> </a>
-            </span>
+            {/* <!-- Main --> */}
+            <div className="main">
+                <h2>IDENTITY</h2>
+                <div className="card">
+                    <div className="card-body">
+                        <i className="fa fa-pen fa-xs edit"></i>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>:</td>
+                                    <td> {profileInfo.name} </td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>:</td>
+                                    <td> {profileInfo.email} </td>
+                                </tr>
+                                <tr>
+                                    <td>Address</td>
+                                    <td>:</td>
+                                    <td> {profileInfo.address} </td>
+                                </tr>
+                                <tr>
+                                    <td>Phone Number</td>
+                                    <td>:</td>
+                                    <td> {profileInfo.phoneNumber} </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
-            {/* <!-- twitter  --> */}
-            <span class="fa-stack fa-sm">
-              <i class="fas fa-circle fa-stack-2x"></i>
-              <a  href = "{{url_for('twitter')}}" > <i class="fab fa-twitter fa-stack-1x fa-inverse">   </i> </a>
-            </span>
+                <h2>Contact Us</h2>
+                <div className="card">
+                    <div className="card-body">
+                        <i className="fa fa-pen fa-xs edit"></i>
+                        <div className="social-media">
+                            {/* <!-- facebook --> */}
+                            <span className="fa-stack fa-sm">
+                                <i className="fas fa-circle fa-stack-2x"></i>
+                                <Link to="{{url_for('facebook')}}">
+                                    {" "}
+                                    <i className="fab fa-facebook fa-stack-1x fa-inverse"></i>{" "}
+                                </Link>
+                            </span>
 
-            {/* <!-- instagram --> */}
-            <span class="fa-stack fa-sm">
-              <i class="fas fa-circle fa-stack-2x"></i>
-              <a href = "{{ url_for('instagram') }}" > <i class="fab fa-instagram fa-stack-1x fa-inverse"></i> </a>
-            </span>
+                            {/* <!-- twitter  --> */}
+                            <span className="fa-stack fa-sm">
+                                <i className="fas fa-circle fa-stack-2x"></i>
+                                <Link to="{{url_for('twitter')}}">
+                                    {" "}
+                                    <i className="fab fa-twitter fa-stack-1x fa-inverse">
+                                        {" "}
+                                    </i>{" "}
+                                </Link>
+                            </span>
 
-            {/* <!-- linkedin --> */}
-            <span class="fa-stack fa-sm">
-              <i class="fas fa-circle fa-stack-2x"></i>
-              <a href = "{{ url_for('linkedin') }}" > <i class="fab fa-invision fa-stack-1x fa-inverse"></i> </a>
-            </span>
+                            {/* <!-- instagram --> */}
+                            <span className="fa-stack fa-sm">
+                                <i className="fas fa-circle fa-stack-2x"></i>
+                                <Link to="{{ url_for('instagram') }}">
+                                    {" "}
+                                    <i className="fab fa-instagram fa-stack-1x fa-inverse"></i>{" "}
+                                </Link>
+                            </span>
 
-            {/* <!-- whatsapp  --> */}
-            <span class="fa-stack fa-sm">
-              <i class="fas fa-circle fa-stack-2x"></i>
-              <a href = "{{ url_for('whatsapp') }}" > <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i> </a>
-            </span>
+                            {/* <!-- linkedin --> */}
+                            <span className="fa-stack fa-sm">
+                                <i className="fas fa-circle fa-stack-2x"></i>
+                                <Link to="{{ url_for('linkedin') }}">
+                                    {" "}
+                                    <i className="fab fa-invision fa-stack-1x fa-inverse"></i>{" "}
+                                </Link>
+                            </span>
 
-          </div>
-        </div>
-      </div> 
-
-
-    </div>
-    {/* <!-- End --> */}
-    </>
-  )
+                            {/* <!-- whatsapp  --> */}
+                            <span className="fa-stack fa-sm">
+                                <i className="fas fa-circle fa-stack-2x"></i>
+                                <Link to="{{ url_for('whatsapp') }}">
+                                    {" "}
+                                    <i className="fab fa-whatsapp fa-stack-1x fa-inverse"></i>{" "}
+                                </Link>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* <!-- End --> */}
+        </>
+    );
 }
