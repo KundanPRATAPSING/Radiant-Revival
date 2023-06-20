@@ -48,7 +48,7 @@ export default function Profile(props) {
 
                 <div className="sidenav-url">
                     <div className="url">
-                        <Link to="/profile" className="active">
+                        <Link to="/profile" state={profileInfo} className="active">
                             Profile
                         </Link>
                         <hr align="center" />

@@ -3,6 +3,7 @@ import Navbar from "../../components/Header/Navbar";
 import Carousel from "./Carousel";
 import Banner from "./Banner";
 import Department from "./Department";
+import { useLocation } from "react-router";
 
 export default function Home() {
   const topImage1 = require("../../assets/images/top-image-1.jpg");
@@ -23,6 +24,9 @@ export default function Home() {
   const organicImage = require("../../assets/images/organic/organic0.jpeg");
   const beautyToolsImage = require("../../assets/images/beautyTools/beautytools0.jpeg");
   const bodyArtImage = require("../../assets/images/bodyArt/bodyArt0.jpeg");
+
+  const location = useLocation();
+  const isNameUpdated = location.state && location.state.isNameUpdated;
 
   useEffect(() => {
     const interval = setInterval(() => {

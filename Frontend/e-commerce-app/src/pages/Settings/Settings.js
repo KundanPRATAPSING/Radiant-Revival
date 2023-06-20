@@ -47,7 +47,7 @@ export default function Settings(props) {
 
                 <div className="sidenav-url">
                     <div className="url">
-                        <Link to="/settings" className="active">
+                        <Link to="/settings" state={profileInfo} className="active">
                             Settings
                         </Link>
                         <hr align="center" />
@@ -72,6 +72,7 @@ export default function Settings(props) {
                                     <td>Name</td>
                                     <td>:</td>
                                     <td> {profileInfo.name} </td>
+                                    <td> <Link to = "/updateName" state={profileInfo} > <i className="fas fa-edit" >  </i> </Link> </td>
                                 </tr>
                                 <tr>
                                     <td>Email</td>
@@ -82,11 +83,13 @@ export default function Settings(props) {
                                     <td>Address</td>
                                     <td>:</td>
                                     <td> {profileInfo.address} </td>
+                                    <td>  <i className="fas fa-edit"></i> </td>
                                 </tr>
                                 <tr>
                                     <td>Phone Number</td>
                                     <td>:</td>
                                     <td> {profileInfo.phoneNumber} </td>
+                                    <td>  <i className="fas fa-edit"></i> </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -152,3 +155,4 @@ export default function Settings(props) {
         </>
     );
 }
+

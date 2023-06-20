@@ -17,6 +17,7 @@ import Profile from "./pages/Home/Profile";
 import Logout from "./pages/Session/Logout";
 import OrderPreview from "./pages/Home/OrderPreview";
 import Settings from "./pages/Settings/Settings";
+import UpdateName from "./pages/Settings/UpdateName";
 
 export default function App() {
 
@@ -40,6 +41,7 @@ export default function App() {
         <Route path="/skinCare" element={<SkinCare />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/OrderPreview" element={<OrderPreview />} />
+        <Route path="/updateName" element={<UpdateName />} />
       </Routes>
     </Router>
   );
