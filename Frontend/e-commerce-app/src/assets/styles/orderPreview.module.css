@@ -19,6 +19,7 @@
 .orderPreview__img {
   max-width: 100%;
   display: block;
+  padding: 22px;
 }
 
 .orderPreview__title,
@@ -84,10 +85,10 @@
 }
 
 .orderPreview__planPrice{
-  margin-top: 0;
+  margin-top: 1px;
   margin-bottom: 0rem;
   font-size: xx-large;
-  margin-left: -1.5em;
+  margin-left: -7.5em;
 }
 
 .orderPreview__planTitle {

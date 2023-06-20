@@ -46,19 +46,12 @@ const OrderPreview = () => {
               <div className={styles.orderPreview__planDetail}>
                 <p className={styles.orderPreview__planPrice}>{costPrice}</p>
               </div>
-              <button
-                className={`btn ${styles.orderPreview__planBtn}`}
-                id="orderPreview__changeBtn"
-                onClick={handleGoBack}
-              >
-                Change
-              </button>
             </div>
 
             <button className={styles.orderPreview__payBtn}>
               Proceed to Payment
             </button>
-            <button className={styles.orderPreview__cancelBtn}>
+            <button className={styles.orderPreview__cancelBtn} onClick= {handleGoBack}>
               Cancel Order
             </button>
           </div>

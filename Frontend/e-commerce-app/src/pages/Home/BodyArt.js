@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../../components/Header/Navbar";
 import OrderPage from "./OrderPage";
+import DepartMentName from "./DepartMentName";
 
 export default function BodyArt() {
   const bodyArt1 = require("../../assets/images/bodyArt/bodyart-1.jpeg");
@@ -22,11 +23,7 @@ export default function BodyArt() {
 
       {/* <!-- Shop by department-icons --> */}
 
-      <div className="container" id="depart">
-        <h3 className="d-flex justify-content-center justify-content-sm-start mt-5 mb-3">
-          Department - Living Room
-        </h3>
-      </div>
+      <DepartMentName departmentName = {departmentName} />
 
       {/* <!-- New offers --> */}
 

@@ -51,7 +51,7 @@ export default function UpdateName(props) {
         };
 
         try {
-            const response = await fetch("http://localhost:8080/updateName", {
+            const response = await fetch("http://localhost:8080/updateProfile", {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",

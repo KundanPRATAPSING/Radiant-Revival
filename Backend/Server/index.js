@@ -156,7 +156,7 @@ server.post('/profile', async (req, res) => {
     }
 });
 
-server.put('/updateName', async (req, res) => {
+server.put('/updateProfile', async (req, res) => {
 
     const updateData = req.body; // Get the updated data from the request body
     const email = updateData.email; // Get the email from the request body
@@ -165,6 +165,10 @@ server.put('/updateName', async (req, res) => {
         const updatedUser = await Users.findOneAndUpdate({ email: email }, updateData, {
             new: true,
         });
+
+        if(updateData.phoneNumber !== null){
+            console.log('pip pip') // send a special request to identify what to change
+        }
 
         if (updatedUser) {
             res.json(updatedUser);
@@ -176,8 +180,6 @@ server.put('/updateName', async (req, res) => {
         res.status(500).json({ error: 'Internal server error' });
     }
 });
-
-
 
 server.listen(8080, () => {
     console.log('Server Connected');

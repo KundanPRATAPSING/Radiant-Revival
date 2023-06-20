@@ -18,6 +18,8 @@ import Logout from "./pages/Session/Logout";
 import OrderPreview from "./pages/Home/OrderPreview";
 import Settings from "./pages/Settings/Settings";
 import UpdateName from "./pages/Settings/UpdateName";
+import UpdateAddress from './pages/Settings/UpdateAddress';
+import UpdatePhone from './pages/Settings/UpdatePhone';
 
 export default function App() {
 
@@ -42,6 +44,8 @@ export default function App() {
         <Route path="/logout" element={<Logout />} />
         <Route path="/OrderPreview" element={<OrderPreview />} />
         <Route path="/updateName" element={<UpdateName />} />
+        <Route path="/updateAddress" element={<UpdateAddress />} />
+        <Route path="/updatePhone" element={<UpdatePhone />} />
       </Routes>
     </Router>
   );
