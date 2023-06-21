@@ -120,12 +120,20 @@
     display: block;
     padding: 0px 5px;
     color: #9aa4ad;
+    margin: auto;
 }
 
 .LoginPageInnerContainer .LoginFormContainer .ForgotPasswordLink {
-    color: #e7483b;
+    cursor: pointer;
+    color: red;
     text-decoration: none;
+    margin: auto;
 }
+
+.LoginPageInnerContainer .LoginFormContainer .ForgotPasswordLink:hover {
+    cursor: pointer;
+}
+
 
 .LoginFormContainer .LoginFormInnerContainer .LoginButton {
     margin-top: 30px;

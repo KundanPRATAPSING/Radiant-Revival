@@ -20,6 +20,8 @@ import Settings from "./pages/Settings/Settings";
 import UpdateName from "./pages/Settings/UpdateName";
 import UpdateAddress from './pages/Settings/UpdateAddress';
 import UpdatePhone from './pages/Settings/UpdatePhone';
+import ForgotPassword from "./pages/Login/ForgotPassword";
+import UpdatePassword from "./pages/Login/UpdatePassword";
 
 export default function App() {
 
@@ -27,6 +29,8 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/forgotPassword" element={<ForgotPassword />} />
+        <Route path="/updatePassword" element={<UpdatePassword />} />
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/home" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
