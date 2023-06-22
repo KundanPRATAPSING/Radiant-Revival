@@ -4,12 +4,12 @@ import OrderPage from "./OrderPage";
 import DepartMentName from "./DepartMentName";
 
 export default function MakeUp() {
-  const bodyArt1 = require("../../assets/images/makeUp/makeup-3.jpeg");
-  const bodyArt2 = require("../../assets/images/makeUp/makeup-2.jpeg");
-  const bodyArt3 = require("../../assets/images/makeUp/makeup-9.jpeg");
-  const bodyArt4 = require("../../assets/images/makeUp/makeup-5.jpeg");
-  const bodyArt5 = require("../../assets/images/makeUp/makeup-7.jpeg");
-  const bodyArt6 = require("../../assets/images/makeUp/makeup-12.jpeg");
+  const makeUp1 = require("../../assets/images/makeUp/makeup-3.jpeg");
+  const makeUp2 = require("../../assets/images/makeUp/makeup-2.jpeg");
+  const makeUp3 = require("../../assets/images/makeUp/makeup-9.jpeg");
+  const makeUp4 = require("../../assets/images/makeUp/makeup-14.jpeg");
+  const makeUp5 = require("../../assets/images/makeUp/makeup-16.jpeg");
+  const makeUp6 = require("../../assets/images/makeUp/makeup-17.jpeg");
   const departmentName = "Make Up";
 
   return (
@@ -32,61 +32,61 @@ export default function MakeUp() {
           {/* <!-- Image 1 --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-1"
-            price="14"
-            imgUrl={bodyArt1}
+            heading="Enchanting Beauty"
+            content="Captivate with makeup that exudes an irresistible charm, casting a spell of allure wherever you go."
+            imgName="make-up-1"
+            price="8"
+            imgUrl={makeUp1}
           />
 
           {/* <!-- Image 2 --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-2"
+            heading="Effortless Glamour"
+            content="Radiate glamour effortlessly as you adorn yourself with carefully curated makeup that enhances your natural elegance."
+            imgName="make-up-2"
             price="14"
-            imgUrl={bodyArt2}
+            imgUrl={makeUp2}
           />
 
           {/* <!-- Imgae 3  --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-3"
-            price="14"
-            imgUrl={bodyArt3}
+            heading="Youthful Vibrance"
+            content="Rejuvenate your look with makeup that breathes youthful vibrance into your appearance, reviving your inner glow."
+            imgName="make-up-3"
+            price="24"
+            imgUrl={makeUp3}
           />
 
           {/* <!-- Image 4  --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-4"
-            price="14"
-            imgUrl={bodyArt4}
+            heading="Revitalizing Rituals"
+            content="Immerse yourself in rejuvenating makeup rituals that nourish your skin, restoring its vitality and freshness."
+            imgName="make-up-4"
+            price="78"
+            imgUrl={makeUp4}
           />
 
           {/* <!-- Image 5 --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-5"
-            price="14"
-            imgUrl={bodyArt5}
+            heading="Unleash Your Boldness"
+            content="Embrace the transformative power of makeup to unleash your inner boldness and express your unique personality fearlessly."
+            imgName="make-up-5"
+            price="19"
+            imgUrl={makeUp5}
           />
 
           {/* <!-- Image 6  --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-6"
-            price="14"
-            imgUrl={bodyArt6}
+            heading="Timeless Artistry"
+            content="Master the art of timeless beauty through expert techniques and exquisite makeup selections that transcend trends and leave a lasting impression."
+            imgName="make-up-6"
+            price="23"
+            imgUrl={makeUp6}
           />
 
           {/* Row Div  */}

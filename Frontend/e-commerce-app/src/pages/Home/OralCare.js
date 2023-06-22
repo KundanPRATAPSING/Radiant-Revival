@@ -4,12 +4,12 @@ import OrderPage from "./OrderPage";
 import DepartMentName from "./DepartMentName";
 
 export default function OralCare() {
-  const bodyArt1 = require("../../assets/images/oralCare/oralcare-5.jpeg");
-  const bodyArt2 = require("../../assets/images/oralCare/oralcare-6.jpeg");
-  const bodyArt3 = require("../../assets/images/oralCare/oralcare-3.jpeg");
-  const bodyArt4 = require("../../assets/images/oralCare/oralcare-4.jpeg");
-  const bodyArt5 = require("../../assets/images/oralCare/oralcare-2.jpeg");
-  const bodyArt6 = require("../../assets/images/oralCare/oralcare-7.jpeg");
+  const oralCare1 = require("../../assets/images/oralCare/oralcare-5.jpeg");
+  const oralCare2 = require("../../assets/images/oralCare/oralcare-6.jpeg");
+  const oralCare3 = require("../../assets/images/oralCare/oralcare-3.jpeg");
+  const oralCare4 = require("../../assets/images/oralCare/oralcare-10.jpeg");
+  const oralCare5 = require("../../assets/images/oralCare/oralcare-2.jpeg");
+  const oralCare6 = require("../../assets/images/oralCare/oralcare-7.jpeg");
   const departmentName = "Oral Care";
 
   return (
@@ -32,61 +32,61 @@ export default function OralCare() {
           {/* <!-- Image 1 --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-1"
-            price="14"
-            imgUrl={bodyArt1}
+            heading="Healthy Smile Essentials"
+            content="Explore the fundamental aspects of oral care, from proper brushing and flossing techniques to choosing the right toothpaste and mouthwash, for a healthy and radiant smile."
+            imgName="oral-care-1"
+            price="17"
+            imgUrl={oralCare1}
           />
 
           {/* <!-- Image 2 --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-2"
-            price="14"
-            imgUrl={bodyArt2}
+            heading="Fresh Breath Confidence"
+            content="Discover the secrets to fresh breath and confident oral hygiene through expert tips, product recommendations, and lifestyle practices that keep bad breath at bay."
+            imgName="oral-care-2"
+            price="40"
+            imgUrl={oralCare2}
           />
 
           {/* <!-- Imgae 3  --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-3"
-            price="14"
-            imgUrl={bodyArt3}
+            heading="Oral Care for All Ages"
+            content="Learn about age-appropriate oral care practices for every life stage, including children, teenagers, adults, and seniors, ensuring optimal oral health throughout the lifespan."
+            imgName="oral-care-3"
+            price="23"
+            imgUrl={oralCare3}
           />
 
           {/* <!-- Image 4  --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-4"
-            price="14"
-            imgUrl={bodyArt4}
+            heading="Beyond Brushing"
+            content="Dive into advanced oral care techniques such as tongue scraping, interdental cleaning, and mouth rinsing, along with exploring innovative oral care products that enhance your routine."
+            imgName="oral-care-4"
+            price="3"
+            imgUrl={oralCare4}
           />
 
           {/* <!-- Image 5 --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-5"
-            price="14"
-            imgUrl={bodyArt5}
+            heading="Smile Makeover"
+            content="Discover the world of cosmetic dentistry and explore smile makeover options such as teeth whitening, veneers, and orthodontics, helping you achieve the smile of your dreams."
+            imgName="oral-care-5"
+            price="18"
+            imgUrl={oralCare5}
           />
 
           {/* <!-- Image 6  --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-6"
-            price="14"
-            imgUrl={bodyArt6}
+            heading="Oral Health "
+            content="Explore the connection between oral health and overall well-being, as we discuss how oral health impacts systemic health and provide tips for maintaining a healthy mouth and body."
+            imgName="oral-care-6"
+            price="21"
+            imgUrl={oralCare6}
           />
 
           {/* Row Div  */}

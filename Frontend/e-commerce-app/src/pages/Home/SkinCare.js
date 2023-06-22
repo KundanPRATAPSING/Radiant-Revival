@@ -4,12 +4,12 @@ import OrderPage from "./OrderPage";
 import DepartMentName from './DepartMentName';
 
 export default function SkinCare() {
-  const bodyArt1 = require("../../assets/images/skinCare/skincare-11.jpeg");
-  const bodyArt2 = require("../../assets/images/skinCare/skincare-12.jpeg");
-  const bodyArt3 = require("../../assets/images/skinCare/skincare-6.jpeg");
-  const bodyArt4 = require("../../assets/images/skinCare/skincare-7.jpeg");
-  const bodyArt5 = require("../../assets/images/skinCare/skincare-1.jpeg");
-  const bodyArt6 = require("../../assets/images/skinCare/skincare-9.jpeg");
+  const skinCare1 = require("../../assets/images/skinCare/skincare-11.jpeg");
+  const skinCare2 = require("../../assets/images/skinCare/skincare-12.jpeg");
+  const skinCare3 = require("../../assets/images/skinCare/skincare-6.jpeg");
+  const skinCare4 = require("../../assets/images/skinCare/skincare-7.jpeg");
+  const skinCare5 = require("../../assets/images/skinCare/skincare-1.jpeg");
+  const skinCare6 = require("../../assets/images/skinCare/skincare-9.jpeg");
   const departmentName = "Skin Care";
 
   return (
@@ -32,61 +32,61 @@ export default function SkinCare() {
           {/* <!-- Image 1 --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-1"
-            price="14"
-            imgUrl={bodyArt1}
+            heading="Timeless Beauty"
+            content="Unveil the timeless allure of your skin as you embrace a personalized skincare routine designed to enhance your natural beauty."
+            imgName="skin-care-1"
+            price="12"
+            imgUrl={skinCare1}
           />
 
           {/* <!-- Image 2 --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-2"
-            price="14"
-            imgUrl={bodyArt2}
+            heading="Effortless Radiance"
+            content="Unleash your natural glow and achieve radiant skin effortlessly with the right skincare regimen."
+            imgName="skin-care-2"
+            price="11"
+            imgUrl={skinCare2}
           />
 
           {/* <!-- Imgae 3  --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-3"
-            price="14"
-            imgUrl={bodyArt3}
+            heading="Age-Defying Glow"
+            content="Turn back the hands of time and unveil a youthful, radiant complexion through effective skincare practices."
+            imgName="skin-care-3"
+            price="5"
+            imgUrl={skinCare3}
           />
 
           {/* <!-- Image 4  --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-4"
-            price="14"
-            imgUrl={bodyArt4}
+            heading="Nurturing Skin Rituals"
+            content="Indulge in self-care with nurturing skincare rituals that pamper your skin and restore it."
+            imgName="skin-care-4"
+            price="3"
+            imgUrl={skinCare4}
           />
 
           {/* <!-- Image 5 --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-5"
-            price="14"
-            imgUrl={bodyArt5}
+            heading="Unveiling Inner Glow"
+            content="Discover the inner glow that lies within as you embark on a transformative skincare journey."
+            imgName="skin-care-5"
+            price="9"
+            imgUrl={skinCare5}
           />
 
           {/* <!-- Image 6  --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-6"
-            price="14"
-            imgUrl={bodyArt6}
+            heading="Timeless Skincare Secrets"
+            content="Unlock the secrets to timeless beauty and elevate your skincare routine to new heights."
+            imgName="skin-care-6"
+            price="25"
+            imgUrl={skinCare6}
           />
 
           {/* Row Div  */}

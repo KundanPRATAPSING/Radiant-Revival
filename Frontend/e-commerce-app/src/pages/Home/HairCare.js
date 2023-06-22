@@ -4,12 +4,12 @@ import OrderPage from "./OrderPage";
 import DepartMentName from './DepartMentName';
 
 export default function HairCare() {
-  const bodyArt1 = require("../../assets/images/hairCare/haircare-7.jpeg");
-  const bodyArt2 = require("../../assets/images/hairCare/haircare-2.jpeg");
-  const bodyArt3 = require("../../assets/images/hairCare/haircare-8.jpeg");
-  const bodyArt4 = require("../../assets/images/hairCare/haircare-4.jpeg");
-  const bodyArt5 = require("../../assets/images/hairCare/haircare-5.jpeg");
-  const bodyArt6 = require("../../assets/images/hairCare/haircare-3.jpeg");
+  const hairCare1 = require("../../assets/images/hairCare/haircare-7.jpeg");
+  const hairCare2 = require("../../assets/images/hairCare/haircare-2.jpeg");
+  const hairCare3 = require("../../assets/images/hairCare/haircare-8.jpeg");
+  const hairCare4 = require("../../assets/images/hairCare/haircare-4.jpeg");
+  const hairCare5 = require("../../assets/images/hairCare/haircare-5.jpeg");
+  const hairCare6 = require("../../assets/images/hairCare/haircare-3.jpeg");
   const departmentName = "Hair Care";
 
   return (
@@ -32,61 +32,61 @@ export default function HairCare() {
           {/* <!-- Image 1 --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-1"
-            price="14"
-            imgUrl={bodyArt1}
+            heading="Nourishing Essentials"
+            content="Discover essential haircare products and routines to nourish and restore your locks, promoting healthier and more vibrant hair."
+            imgName="hair-care-1"
+            price="15"
+            imgUrl={hairCare1}
           />
 
           {/* <!-- Image 2 --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-2"
-            price="14"
-            imgUrl={bodyArt2}
+            heading="Silky Smooth Solutions"
+            content="Explore a range of haircare solutions and techniques that can transform your hair, leaving it irresistibly smooth, silky, and touchable."
+            imgName="hair-care-2"
+            price="18"
+            imgUrl={hairCare2}
           />
 
           {/* <!-- Imgae 3  --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-3"
-            price="14"
-            imgUrl={bodyArt3}
+            heading="Tackling Common Hair Concerns"
+            content="Address common hair concerns such as dryness, frizz, and damage, as we provide practical solutions, tips."
+            imgName="hair-care-3"
+            price="24"
+            imgUrl={hairCare3}
           />
 
           {/* <!-- Image 4  --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-4"
-            price="14"
-            imgUrl={bodyArt4}
+            heading="Customized Care"
+            content="Learn how to identify your hair type and customize your haircare routine with suitable products and techniques for optimal results."
+            imgName="hair-care-4"
+            price="19"
+            imgUrl={hairCare4}
           />
 
           {/* <!-- Image 5 --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-5"
-            price="14"
-            imgUrl={bodyArt5}
+            heading="Styling Secrets"
+            content="Unveil professional hairstyling secrets, from creating effortless waves to achieving sleek updos, empowering you to express your style."
+            imgName="hair-care-5"
+            price="32"
+            imgUrl={hairCare5}
           />
 
           {/* <!-- Image 6  --> */}
           <OrderPage
             departmentName={departmentName}
-            heading="Timeless Elegance"
-            content="Whether you're lounging with family or entertaining guests, our sofas provide ample seating for everyone."
-            imgName="body-art-6"
-            price="14"
-            imgUrl={bodyArt6}
+            heading="Beyond Shampoo and Conditioner"
+            content="Dive into the world of specialized hair treatments, including deep conditioning masks, scalp treatments, and serums.."
+            imgName="hair-care-6"
+            price="29"
+            imgUrl={hairCare6}
           />
 
           {/* Row Div  */}
