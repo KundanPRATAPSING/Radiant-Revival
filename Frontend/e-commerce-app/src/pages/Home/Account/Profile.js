@@ -1,6 +1,8 @@
 import React from "react";
 import "../../../assets/styles/profile.css"
 import { Link, useLocation } from "react-router-dom";
+import ContactUs from "../Components/ContactUs";
+import ProfileInfo from "../Components/ProfileInfo";
 
 export default function Profile(props) {
 
@@ -63,91 +65,9 @@ export default function Profile(props) {
 
             {/* <!-- Main --> */}
             <div className="main">
-                <h2>IDENTITY</h2>
-                <div className="card">
-                    <div className="card-body">
-                        <i className="fa fa-pen fa-xs edit"></i>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>:</td>
-                                    <td> {profileInfo.name} </td>
-                                </tr>
-                                <tr>
-                                    <td>Email</td>
-                                    <td>:</td>
-                                    <td> {profileInfo.email} </td>
-                                </tr>
-                                <tr>
-                                    <td>Address</td>
-                                    <td>:</td>
-                                    <td> {profileInfo.address} </td>
-                                </tr>
-                                <tr>
-                                    <td>Phone Number</td>
-                                    <td>:</td>
-                                    <td> {profileInfo.phoneNumber} </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                <ProfileInfo profileInfo={profileInfo} />
 
-                <h2>Contact Us</h2>
-                <div className="card">
-                    <div className="card-body">
-                        <i className="fa fa-pen fa-xs edit"></i>
-                        <div className="social-media">
-                            {/* <!-- facebook --> */}
-                            <span className="fa-stack fa-sm">
-                                <i className="fas fa-circle fa-stack-2x"></i>
-                                <Link to="{{url_for('facebook')}}">
-                                    {" "}
-                                    <i className="fab fa-facebook fa-stack-1x fa-inverse"></i>{" "}
-                                </Link>
-                            </span>
-
-                            {/* <!-- twitter  --> */}
-                            <span className="fa-stack fa-sm">
-                                <i className="fas fa-circle fa-stack-2x"></i>
-                                <Link to="{{url_for('twitter')}}">
-                                    {" "}
-                                    <i className="fab fa-twitter fa-stack-1x fa-inverse">
-                                        {" "}
-                                    </i>{" "}
-                                </Link>
-                            </span>
-
-                            {/* <!-- instagram --> */}
-                            <span className="fa-stack fa-sm">
-                                <i className="fas fa-circle fa-stack-2x"></i>
-                                <Link to="{{ url_for('instagram') }}">
-                                    {" "}
-                                    <i className="fab fa-instagram fa-stack-1x fa-inverse"></i>{" "}
-                                </Link>
-                            </span>
-
-                            {/* <!-- linkedin --> */}
-                            <span className="fa-stack fa-sm">
-                                <i className="fas fa-circle fa-stack-2x"></i>
-                                <Link to="{{ url_for('linkedin') }}">
-                                    {" "}
-                                    <i className="fab fa-invision fa-stack-1x fa-inverse"></i>{" "}
-                                </Link>
-                            </span>
-
-                            {/* <!-- whatsapp  --> */}
-                            <span className="fa-stack fa-sm">
-                                <i className="fas fa-circle fa-stack-2x"></i>
-                                <Link to="{{ url_for('whatsapp') }}">
-                                    {" "}
-                                    <i className="fab fa-whatsapp fa-stack-1x fa-inverse"></i>{" "}
-                                </Link>
-                            </span>
-                        </div>
-                    </div>
-                </div>
+                <ContactUs />
             </div>
             {/* <!-- End --> */}
         </>

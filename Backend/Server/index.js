@@ -223,10 +223,6 @@ server.put("/updateProfile", async (req, res) => {
                }
           );
 
-          if (updateData.phoneNumber !== null) {
-               console.log("pip pip"); // send a special request to identify what to change
-          }
-
           if (updatedUser) {
                res.json(updatedUser);
           } else {

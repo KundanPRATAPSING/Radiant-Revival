@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router";
 import Navbar from "../../components/Header/Navbar";
 import Banner from "./Components/Banner";
 import Carousel from "./Components/Carousel";
-import Department from './Department/Department';
+import Department from "./Department/Department";
+import Footer from "../../components/Footer/Footer"
 
 export default function Home() {
   const topImage1 = require("../../assets/images/top-image-1.jpg");
@@ -25,12 +25,9 @@ export default function Home() {
   const beautyToolsImage = require("../../assets/images/beautyTools/beautytools0.jpeg");
   const bodyArtImage = require("../../assets/images/bodyArt/bodyArt0.jpeg");
 
-  const location = useLocation();
-  const isNameUpdated = location.state && location.state.isNameUpdated;
-
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % 5); 
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % 5);
     }, 5000); // Change image every 5 seconds
 
     return () => clearInterval(interval); // Clean up the interval on component unmount
@@ -50,11 +47,11 @@ export default function Home() {
       >
         {/* Set a timer of 5 sec to change the images in the carousel  */}
         <div className="carousel-inner">
-          <Carousel image={topImage1} isActive = {currentImageIndex === 0}/>
-          <Carousel image={topImage2} isActive = {currentImageIndex === 1}/>
-          <Carousel image={topImage3} isActive = {currentImageIndex === 2}/>
-          <Carousel image={topImage4} isActive = {currentImageIndex === 3}/>
-          <Carousel image={topImage5} isActive = {currentImageIndex === 4}/>
+          <Carousel image={topImage1} isActive={currentImageIndex === 0} />
+          <Carousel image={topImage2} isActive={currentImageIndex === 1} />
+          <Carousel image={topImage3} isActive={currentImageIndex === 2} />
+          <Carousel image={topImage4} isActive={currentImageIndex === 3} />
+          <Carousel image={topImage5} isActive={currentImageIndex === 4} />
         </div>
       </div>
 
@@ -74,35 +71,35 @@ export default function Home() {
           {/* <!-- Skincare Department  --> */}
           <Department
             departmentImage={skinCareImage}
-            redirectUrl = "/skinCare"
+            redirectUrl="/skinCare"
             departmentName="Skin Care"
           />
 
           {/* <!-- Makeup Department  --> */}
           <Department
             departmentImage={makeUpImage}
-            redirectUrl = "/makeUp"
+            redirectUrl="/makeUp"
             departmentName="Make Up"
           />
 
           {/* <!-- Haircare Department  --> */}
           <Department
             departmentImage={hairCareImage}
-            redirectUrl = "/hairCare"
+            redirectUrl="/hairCare"
             departmentName="Hair Care"
           />
 
           {/* <!-- Fragrances Department  --> */}
           <Department
             departmentImage={fragranceImage}
-            redirectUrl = "/fragrance"
+            redirectUrl="/fragrance"
             departmentName="Fragrance"
           />
 
           {/* <!-- Bodycare Department  --> */}
           <Department
             departmentImage={bodyCareImage}
-            redirectUrl = "/bodyCare"
+            redirectUrl="/bodyCare"
             departmentName="Body Care"
           />
 
@@ -112,35 +109,35 @@ export default function Home() {
           {/* <!-- Oral Care Department  --> */}
           <Department
             departmentImage={oralCareImage}
-            redirectUrl = "/oralCare"
+            redirectUrl="/oralCare"
             departmentName="oralCare"
           />
 
           {/* <!-- Men's Grooming Department  --> */}
           <Department
             departmentImage={menGroomingImage}
-            redirectUrl = "/menGrooming"
+            redirectUrl="/menGrooming"
             departmentName="Men Grooming"
           />
 
           {/* <!-- Natural and Organic Department  --> */}
           <Department
             departmentImage={organicImage}
-            redirectUrl = "/organic"
+            redirectUrl="/organic"
             departmentName="Organic"
           />
 
           {/* <!-- Beauty Tools and Accessories Department  --> */}
           <Department
             departmentImage={beautyToolsImage}
-            redirectUrl = "/beautyTools"
+            redirectUrl="/beautyTools"
             departmentName="Beauty Tools"
           />
 
           {/* <!-- Body Art  --> */}
           <Department
             departmentImage={bodyArtImage}
-            redirectUrl = "/bodyArt"
+            redirectUrl="/bodyArt"
             departmentName="Body Art"
           />
         </div>
@@ -217,10 +214,13 @@ export default function Home() {
       {/* <!-- End new offers--> */}
 
       {/* <!-- footer --> */}
+
+        <Footer />
+
       {/* End Footer  */}
 
       {/* <!-- scroll go top start --> */}
-      <a id="myBtn" className="gotopbtn" href="#body-start">
+      {/* <a id="myBtn" className="gotopbtn" href="#body-start">
         <img
           src="https://cdn3.iconfinder.com/data/icons/road-sign/154/road-sign-top-arrow-yellow-attention-512.png"
           width="50"
@@ -228,7 +228,7 @@ export default function Home() {
           loading="lazy"
           alt=""
         />
-      </a>
+      </a> */}
       {/* <!-- scroll end --> */}
 
       {/* <!-- loading start --> */}

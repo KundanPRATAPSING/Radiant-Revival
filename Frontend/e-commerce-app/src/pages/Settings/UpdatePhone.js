@@ -15,6 +15,7 @@ export default function UpdatePhone() {
   const [newPhone, setnewPhone] = useState("");
   const [isUpdated, setIsUpdated] = useState(false);
   const [formErrors, setFormErrors] = useState({});
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   function cancelChange() {
     navigate(-1);
@@ -89,9 +90,12 @@ export default function UpdatePhone() {
 
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isUpdated === true) {
-      console.log("Updated");
       try {
-        navigate("/home", { state: { isPhoneUpdated: true } });
+        setShowSuccessMessage(true);
+        setTimeout(() => {
+          setShowSuccessMessage(false);
+          navigate("/home");
+        }, 500);
       } catch (error) {
         console.error("Error occurred during navigation:", error);
       }
@@ -115,6 +119,12 @@ export default function UpdatePhone() {
               <header class="subHeader">
                 Switched to new number <b>Don't worry!</b> Update the current😇
               </header>
+
+              {showSuccessMessage && (
+                <div className="alert alert-success" role="alert">
+                  Phone Number updated successfully
+                </div>
+              )}
 
               <form onSubmit={handleSubmit} method="POST">
                 {/* <!-- Phone Number  --> */}

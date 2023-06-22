@@ -15,6 +15,7 @@ export default function UpdateAddress() {
   const [newAddress, setNewAddress] = useState("");
   const [isUpdated, setIsUpdated] = useState(false);
   const [formErrors, setFormErrors] = useState({});
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   function cancelChange() {
     navigate(-1);
@@ -89,9 +90,12 @@ export default function UpdateAddress() {
 
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isUpdated === true) {
-      console.log("Updated");
       try {
-        navigate("/home", { state: { isAddressUpdated: true } });
+        setShowSuccessMessage(true);
+        setTimeout(() => {
+          setShowSuccessMessage(false);
+          navigate("/home");
+        }, 500);
       } catch (error) {
         console.error("Error occurred during navigation:", error);
       }
@@ -116,6 +120,12 @@ export default function UpdateAddress() {
                 Not in the previous location <b>Don't worry!</b> Update where
                 you are😇
               </header>
+
+              {showSuccessMessage && (
+                <div className="alert alert-success" role="alert">
+                  Address updated successfully
+                </div>
+              )}
 
               <form onSubmit={handleSubmit} method="POST">
                 {/* <!-- Address  --> */}
