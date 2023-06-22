@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../../components/Header/Navbar";
-import Carousel from "./Carousel";
-import Banner from "./Banner";
-import Department from "./Department";
 import { useLocation } from "react-router";
+import Navbar from "../../components/Header/Navbar";
+import Banner from "./Components/Banner";
+import Carousel from "./Components/Carousel";
+import Department from './Department/Department';
 
 export default function Home() {
   const topImage1 = require("../../assets/images/top-image-1.jpg");

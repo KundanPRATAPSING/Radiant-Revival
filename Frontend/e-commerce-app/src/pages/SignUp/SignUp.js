@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./SignUp.css";
+import "../../assets/styles/SignUp.css"
 import { Link, useNavigate } from "react-router-dom";
 import { saveSessionData, getSessionData } from "../Session/Session";
 

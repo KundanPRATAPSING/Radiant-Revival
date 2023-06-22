@@ -1,27 +1,29 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import SignUp from "./pages/SignUp/SignUp";
-import Login from "./pages/Login/Login";
-import Home from "./pages/Home/Home";
-import SkinCare from "./pages/Home/SkinCare";
-import BeautyTools from "./pages/Home/BeautyTools";
-import BodyArt from "./pages/Home/BodyArt";
-import BodyCare from "./pages/Home/BodyCare";
-import Fragrance from "./pages/Home/Fragrance";
-import HairCare from "./pages/Home/HairCare";
-import MakeUp from "./pages/Home/MakeUp";
-import MenGrooming from "./pages/Home/MenGrooming";
-import OralCare from "./pages/Home/OralCare";
-import Organic from "./pages/Home/Organic";
-import Profile from "./pages/Home/Profile";
-import Logout from "./pages/Session/Logout";
-import OrderPreview from "./pages/Home/OrderPreview";
-import Settings from "./pages/Settings/Settings";
-import UpdateName from "./pages/Settings/UpdateName";
+import Login from './pages/Login/Login';
+import ForgotPassword from './pages/Login/ForgotPassword';
+import UpdatePassword from './pages/Login/UpdatePassword';
+import SignUp from './pages/SignUp/SignUp';
+import Home from './pages/Home/Home';
+import Profile from './pages/Home/Account/Profile';
+import Settings from './pages/Settings/Settings';
+import MyOrders from './pages/Home/Account/MyOrders';
+import BeautyTools from './pages/Home/Department/BeautyTools';
+import BodyArt from './pages/Home/Department/BodyArt';
+import BodyCare from './pages/Home/Department/BodyCare';
+import Fragrance from './pages/Home/Department/Fragrance';
+import HairCare from './pages/Home/Department/HairCare';
+import MakeUp from './pages/Home/Department/MakeUp';
+import MenGrooming from './pages/Home/Department/MenGrooming';
+import OralCare from './pages/Home/Department/OralCare';
+import Organic from './pages/Home/Department/Organic';
+import SkinCare from './pages/Home/Department/SkinCare';
+import Logout from './pages/Session/Logout';
+import OrderPreview from './pages/Home/Account/OrderPreview';
+import UpdateName from './pages/Settings/UpdateName';
 import UpdateAddress from './pages/Settings/UpdateAddress';
 import UpdatePhone from './pages/Settings/UpdatePhone';
-import ForgotPassword from "./pages/Login/ForgotPassword";
-import UpdatePassword from "./pages/Login/UpdatePassword";
+
 
 export default function App() {
 
@@ -35,6 +37,7 @@ export default function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/myOrders" element={<MyOrders />} />
         <Route path="/beautyTools" element={<BeautyTools />} />
         <Route path="/bodyArt" element={<BodyArt />} />
         <Route path="/bodyCare" element={<BodyCare />} />

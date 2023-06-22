@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../../pages/Home/Home.css";
+import "../../assets/styles/Home.css"
 import { getSessionData } from "../../pages/Session/Session";
 
 export default function Navbar() {
@@ -90,10 +90,11 @@ export default function Navbar() {
                                     Profile
                                 </Link>
 
-                                <Link className="dropdown-item" to="{{url_for('myorders')}}">
+                                <Link className="dropdown-item" to="/">
                                     My orders
                                 </Link>
-                                <Link className="dropdown-item" to="{{url_for('settings')}}">
+                                <Link className="dropdown-item" to= "/settings"
+                                    state={profileInfo}>
                                     Account Settings
                                 </Link>
                                 {/* <!-- Logout  --> */}
