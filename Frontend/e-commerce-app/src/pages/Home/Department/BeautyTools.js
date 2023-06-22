@@ -1,7 +1,7 @@
 import React from "react";
-import OrderPage from '../Account/OrderPage';
-import DepartMentName from './DepartMentName';
-import Navbar from '../../../components/Header/Navbar';
+import OrderPage from "../../Orders/OrderPage";
+import DepartMentName from "./DepartMentName";
+import Navbar from "../../../components/Header/Navbar";
 
 export default function BeautyTools() {
   const beautyTools1 = require("../../../assets/images/beautyTools/beautytools-9.jpeg");
@@ -17,13 +17,14 @@ export default function BeautyTools() {
       {/* Navbar  */}
       <Navbar />
 
+
       {/* <!-- Navbar --> */}
 
       {/* <!-- Top Image --> */}
 
       {/* <!-- Shop by department-icons --> */}
 
-      <DepartMentName departmentName = {departmentName} />
+      <DepartMentName departmentName={departmentName} />
 
       {/* <!-- New offers --> */}
 
@@ -110,4 +111,3 @@ export default function BeautyTools() {
     </>
   );
 }
-

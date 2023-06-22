@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../../../components/Header/Navbar";
-import OrderPage from "../Account/OrderPage";
+import OrderPage from "../../Orders/OrderPage";
 import DepartMentName from "./DepartMentName";
 
 export default function HairCare() {

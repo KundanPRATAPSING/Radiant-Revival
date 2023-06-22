@@ -19,10 +19,10 @@ import OralCare from './pages/Home/Department/OralCare';
 import Organic from './pages/Home/Department/Organic';
 import SkinCare from './pages/Home/Department/SkinCare';
 import Logout from './pages/Session/Logout';
-import OrderPreview from './pages/Home/Account/OrderPreview';
 import UpdateName from './pages/Settings/UpdateName';
 import UpdateAddress from './pages/Settings/UpdateAddress';
 import UpdatePhone from './pages/Settings/UpdatePhone';
+import OrderPreview from "./pages/Orders/OrderPreview";
 
 
 export default function App() {
