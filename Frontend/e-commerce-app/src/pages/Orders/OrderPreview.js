@@ -64,6 +64,7 @@ const OrderPreview = () => {
         customer_email: userSession.email,
         customer_product_category: category,
         customer_product_image: imageName,
+        customer_product_image_url: imageUrl,
         customer_product_title: heading,
         customer_product_description: content,
         customer_product_cost: costPrice,
@@ -145,14 +146,14 @@ const OrderPreview = () => {
 
             <form onSubmit={placeOrder}>
               <button className={styles.orderPreview__payBtn} type="submit">
-                Proceed to Payment
+                Add to Cart 
               </button>
             </form>
             <button
               className={styles.orderPreview__cancelBtn}
               onClick={handleGoBack}
             >
-              Cancel Order
+              Go Back
             </button>
           </div>
         </article>
@@ -160,13 +161,13 @@ const OrderPreview = () => {
 
       {showSuccessMessage && (
         <div className="alert alert-success" role="alert">
-          Order Placed Successfully
+          Added to Cart
         </div>
       )}
 
       {showCancelMessage && (
         <div className="alert alert-warning" role="alert">
-          Order Cancelled
+          Order not Added  
         </div>
       )}
 

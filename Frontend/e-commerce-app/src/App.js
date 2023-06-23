@@ -7,7 +7,6 @@ import SignUp from './pages/SignUp/SignUp';
 import Home from './pages/Home/Home';
 import Profile from './pages/Home/Account/Profile';
 import Settings from './pages/Settings/Settings';
-import MyOrders from './pages/Home/Account/MyOrders';
 import BeautyTools from './pages/Home/Department/BeautyTools';
 import BodyArt from './pages/Home/Department/BodyArt';
 import BodyCare from './pages/Home/Department/BodyCare';
@@ -23,6 +22,9 @@ import UpdateName from './pages/Settings/UpdateName';
 import UpdateAddress from './pages/Settings/UpdateAddress';
 import UpdatePhone from './pages/Settings/UpdatePhone';
 import OrderPreview from "./pages/Orders/OrderPreview";
+import OrderImage from "./pages/Home/Account/OrderImage";
+import MyCart from "./pages/Home/Account/MyCart";
+import MyOrders from './pages/Home/Account/MyOrders';
 
 
 export default function App() {
@@ -37,7 +39,9 @@ export default function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/myCart" element={<MyCart />} />
         <Route path="/myOrders" element={<MyOrders />} />
+        <Route path="/orderImage" element={<OrderImage />} />
         <Route path="/beautyTools" element={<BeautyTools />} />
         <Route path="/bodyArt" element={<BodyArt />} />
         <Route path="/bodyCare" element={<BodyCare />} />
