@@ -22,11 +22,11 @@ import UpdateName from './pages/Settings/UpdateName';
 import UpdateAddress from './pages/Settings/UpdateAddress';
 import UpdatePhone from './pages/Settings/UpdatePhone';
 import OrderPreview from "./pages/Orders/OrderPreview";
-import OrderImage from "./pages/Home/Account/OrderImage";
 import MyCart from "./pages/Home/Account/MyCart";
 import MyOrders from './pages/Home/Account/MyOrders';
 import Success from './pages/Orders/Success';
 import Fail from './pages/Orders/Fail';
+import Payment from "./pages/Home/Account/Payment";
 
 
 export default function App() {
@@ -43,7 +43,7 @@ export default function App() {
         <Route path="/settings" element={<Settings />} />
         <Route path="/myCart" element={<MyCart />} />
         <Route path="/myOrders" element={<MyOrders />} />
-        <Route path="/orderImage" element={<OrderImage />} />
+        <Route path="/payment" element={<Payment />} />
         <Route path="/beautyTools" element={<BeautyTools />} />
         <Route path="/bodyArt" element={<BodyArt />} />
         <Route path="/bodyCare" element={<BodyCare />} />

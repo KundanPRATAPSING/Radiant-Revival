@@ -167,7 +167,7 @@ const OrderPreview = () => {
 
       {showCancelMessage && (
         <div className="alert alert-warning" role="alert">
-          Order not Added  
+          Order not added  
         </div>
       )}
 

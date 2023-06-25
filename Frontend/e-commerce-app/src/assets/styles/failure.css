@@ -1,0 +1,42 @@
+.payment-failure-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.payment-failure-content {
+  text-align: center;
+}
+
+.payment-failure-heading {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.payment-failure-message {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.payment-failure-image {
+  width: 150px;
+  margin: 30px auto;
+}
+
+.go-to-home-link {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  padding: 12px 24px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.go-to-home-link:hover {
+  background-color: #dcf0f2;
+}
