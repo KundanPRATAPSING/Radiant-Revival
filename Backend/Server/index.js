@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const stripe = require('./stripe')
 
 main().catch((err) => console.log(err));
 
@@ -42,6 +43,7 @@ const server = express();
 
 server.use(cors());
 server.use(bodyParser.json());
+server.use("/stripe", stripe);
 
 // CORS middleware
 server.use((req, res, next) => {

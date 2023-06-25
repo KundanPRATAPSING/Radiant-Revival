@@ -25,6 +25,8 @@ import OrderPreview from "./pages/Orders/OrderPreview";
 import OrderImage from "./pages/Home/Account/OrderImage";
 import MyCart from "./pages/Home/Account/MyCart";
 import MyOrders from './pages/Home/Account/MyOrders';
+import Success from './pages/Orders/Success';
+import Fail from './pages/Orders/Fail';
 
 
 export default function App() {
@@ -57,6 +59,8 @@ export default function App() {
         <Route path="/updateName" element={<UpdateName />} />
         <Route path="/updateAddress" element={<UpdateAddress />} />
         <Route path="/updatePhone" element={<UpdatePhone />} />
+        <Route path="/success" element={<Success />} />
+        <Route path="/fail" element={<Fail />} />
       </Routes>
     </Router>
   );

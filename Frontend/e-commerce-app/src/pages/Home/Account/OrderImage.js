@@ -2,11 +2,13 @@ import React from "react";
 import styles from "../../../assets/styles/orderPreview.module.css";
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default function OrderImage(props) {
   const location = useLocation();
   
   const {
+    id,
     customer_product_image_url,
     customer_product_title,
     customer_product_description,
@@ -14,6 +16,32 @@ export default function OrderImage(props) {
   } = location.state;
 
   const priceTag = require("../../../assets/images/price_tag.png");
+
+
+  function handleCheckout() {
+
+     const cartItems = [
+    {
+      id,
+      customer_product_image_url,
+      customer_product_title,
+      customer_product_description,
+      customer_product_cost,
+    },
+  ];
+
+    axios
+      .post('http://localhost:8080/stripe/create-checkout-session', {
+        cartItems,
+        userId: id,
+      })
+      .then((response) => {
+        if (response.data.url) {
+          window.location.href = response.data.url;
+        }
+      })
+      .catch((err) => console.log(err.message));
+  };
 
   return (
     <>    
@@ -52,11 +80,9 @@ export default function OrderImage(props) {
               </div>
             </div>
 
-              <form>
-              <button className={styles.orderPreview__payBtn} type="submit">
-                    Proceed to Payment 
+              <button className={styles.orderPreview__payBtn} type="button" onClick={handleCheckout}>
+                Proceed to Payment 
               </button>
-            </form>
             <button
               className={styles.orderPreview__cancelBtn}
             >
