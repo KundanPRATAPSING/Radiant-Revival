@@ -104,19 +104,19 @@ export default function UpdatePhone() {
 
   return (
     <>
-      <div class="LoginPageContainer">
-        <div class="LoginPageInnerContainer">
-          <div class="ImageContianer">
-            <img src={loginLeftImage} class="GroupImage" alt="..." />
+      <div className="LoginPageContainer">
+        <div className="LoginPageInnerContainer">
+          <div className="ImageContianer">
+            <img src={loginLeftImage} className="GroupImage" alt="..." />
           </div>
 
-          <div class="LoginFormContainer">
-            <div class="LoginFormInnerContainer">
-              <div class="LogoContainer">
-                <img src={updatePhoneImage} class="logo" alt="..." />
+          <div className="LoginFormContainer">
+            <div className="LoginFormInnerContainer">
+              <div className="LogoContainer">
+                <img src={updatePhoneImage} className="logo" alt="..." />
               </div>
-              <header class="header">Update Phone Number</header>
-              <header class="subHeader">
+              <header className="header">Update Phone Number</header>
+              <header className="subHeader">
                 Switched to new number <b>Don't worry!</b> Update the current😇
               </header>
 
@@ -128,15 +128,15 @@ export default function UpdatePhone() {
 
               <form onSubmit={handleSubmit} method="POST">
                 {/* <!-- Phone Number  --> */}
-                <div class="inputContainer">
-                  <label class="label" for="phone_number">
-                    <img src={phoneImage} class="labelIcon" alt="..." />
+                <div className="inputContainer">
+                  <label className="label" htmlFor="phone_number">
+                    <img src={phoneImage} className="labelIcon" alt="..." />
                     <span>Previous Number</span>
                   </label>
                   <input
                     type="tel"
                     name="phone_number"
-                    class="input"
+                    className="input"
                     id="phone_number"
                     placeholder="Your previous Phone Number"
                     value={profileInfo.phoneNumber}
@@ -145,15 +145,15 @@ export default function UpdatePhone() {
                 </div>
 
                 {/* <!-- New Phone Number  --> */}
-                <div class="inputContainer">
-                  <label class="label" for="update_phone_number">
-                    <img src={updatePhoneImage} class="labelIcon" alt="..." />
+                <div className="inputContainer">
+                  <label className="label" htmlFor="update_phone_number">
+                    <img src={updatePhoneImage} className="labelIcon" alt="..." />
                     <span>New Phone Number </span>
                   </label>
                   <input
                     type="tel"
                     name="update_phone_number"
-                    class="input"
+                    className="input"
                     id="update_phone_number"
                     placeholder="Enter your new Phone Number"
                     value={newPhone}
@@ -174,11 +174,11 @@ export default function UpdatePhone() {
                   </div>
                 )}
 
-                <button class="LoginButton" type="submit">
+                <button className="LoginButton" type="submit">
                   Update{" "}
                 </button>
                 <button
-                  class="LoginButton"
+                  className="LoginButton"
                   type="submit"
                   onClick={cancelChange}
                 >

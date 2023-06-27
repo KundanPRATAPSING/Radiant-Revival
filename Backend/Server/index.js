@@ -217,7 +217,14 @@ server.post("/profile", async (req, res) => {
 
         if (document) {
             // Document found, return all information
-            res.json(document);
+            const docs = {
+                name: document.name,
+                email: document.email,
+                username: document.username,
+                address: document.address,
+                phoneNumber: document.phoneNumber,
+            }
+            res.json(docs);
         } else {
             // No document found for the given email
             res.status(404).json({ error: "Document not found" });

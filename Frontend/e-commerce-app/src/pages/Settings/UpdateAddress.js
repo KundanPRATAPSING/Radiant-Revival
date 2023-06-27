@@ -104,19 +104,19 @@ export default function UpdateAddress() {
 
   return (
     <>
-      <div class="LoginPageContainer">
-        <div class="LoginPageInnerContainer">
-          <div class="ImageContianer">
-            <img src={loginLeftImage} class="GroupImage" alt="..." />
+      <div className="LoginPageContainer">
+        <div className="LoginPageInnerContainer">
+          <div className="ImageContianer">
+            <img src={loginLeftImage} className="GroupImage" alt="..." />
           </div>
 
-          <div class="LoginFormContainer">
-            <div class="LoginFormInnerContainer">
-              <div class="LogoContainer">
-                <img src={updateAddressImage} class="logo" alt="..." />
+          <div className="LoginFormContainer">
+            <div className="LoginFormInnerContainer">
+              <div className="LogoContainer">
+                <img src={updateAddressImage} className="logo" alt="..." />
               </div>
-              <header class="header">Update Address </header>
-              <header class="subHeader">
+              <header className="header">Update Address </header>
+              <header className="subHeader">
                 Not in the previous location <b>Don't worry!</b> Update where
                 you are😇
               </header>
@@ -129,15 +129,15 @@ export default function UpdateAddress() {
 
               <form onSubmit={handleSubmit} method="POST">
                 {/* <!-- Address  --> */}
-                <div class="inputContainer">
-                  <label class="label" for="address">
-                    <img src={addressImage} class="labelIcon" alt="..." />
+                <div className="inputContainer">
+                  <label className="label" htmlFor="address">
+                    <img src={addressImage} className="labelIcon" alt="..." />
                     <span>Previous Location</span>
                   </label>
                   <input
                     type="textarea"
                     name="address"
-                    class="input"
+                    className="input"
                     id="address"
                     placeholder="Your previous address"
                     value={profileInfo.address}
@@ -146,15 +146,15 @@ export default function UpdateAddress() {
                 </div>
 
                 {/* <!-- New Address  --> */}
-                <div class="inputContainer">
-                  <label class="label" for="update_address">
-                    <img src={updateAddressImage} class="labelIcon" alt="..." />
+                <div className="inputContainer">
+                  <label className="label" htmlFor="update_address">
+                    <img src={updateAddressImage} className="labelIcon" alt="..." />
                     <span>New Address </span>
                   </label>
                   <input
                     type="text"
                     name="update_address"
-                    class="input"
+                    className="input"
                     id="update_address"
                     placeholder="Enter your new address"
                     value={newAddress}
@@ -175,12 +175,12 @@ export default function UpdateAddress() {
                   </div>
                 )}
 
-                <button class="LoginButton" type="submit">
+                <button className="LoginButton" type="submit">
                   {" "}
                   Update{" "}
                 </button>
                 <button
-                  class="LoginButton"
+                  className="LoginButton"
                   type="submit"
                   onClick={cancelChange}
                 >
