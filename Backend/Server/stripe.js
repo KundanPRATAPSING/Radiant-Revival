@@ -1,10 +1,11 @@
+require("dotenv").config();
 const express = require("express");
 const Stripe = require("stripe");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
 // Replace your stripe secret key
-const stripe = Stripe("");
+const stripe = Stripe(process.env.SECRET_KEY);
 
 const router = express.Router();
 

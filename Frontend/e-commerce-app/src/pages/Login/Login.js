@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../../assets/styles/Login.css"
+import "../../assets/styles/Login.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { saveSessionData } from "../Session/Session";
 
@@ -148,7 +148,7 @@ export default function Login() {
 
               {isFromSignUp && (
                 <div className="alert alert-info" role="alert">
-                  Account Created Successfully
+                  Please verify your email, Check your inbox!
                 </div>
               )}
 
@@ -161,6 +161,13 @@ export default function Login() {
               {isFromUpdatePassword && (
                 <div className="alert alert-warning" role="alert">
                   Password Updated Successfully
+                </div>
+              )}
+
+              {/* Display Error Message  */}
+              {loginErrors.verification && (
+                <div className="alert alert-danger" role="alert">
+                  {loginErrors.verification}
                 </div>
               )}
 

@@ -1,8 +1,11 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const stripe = require('./stripe')
+const nodemailer = require("nodemailer");
+const jwt = require("jsonwebtoken");
 
 main().catch((err) => console.log(err));
 
@@ -17,9 +20,22 @@ const userSchema = new mongoose.Schema({
     address: String,
     phoneNumber: String, // first two digits are the country code for India
     email: String,
+    verified: {
+        type: Boolean,
+        required: true,
+        default: false,
+    },
     password: String,
     confirmPassword: String,
 });
+
+userSchema.methods.generateVerificationToken = function () {
+    const user = this;
+    const verificationToken = jwt.sign({ ID: user._id }, process.env.TOKEN, {
+        expiresIn: "7d",
+    });
+    return verificationToken;
+};
 
 const Users = new mongoose.model("Users", userSchema);
 
@@ -43,7 +59,6 @@ const server = express();
 
 server.use(cors());
 server.use(bodyParser.json());
-server.use("/stripe", stripe);
 
 // CORS middleware
 server.use((req, res, next) => {
@@ -72,6 +87,14 @@ server.use((req, res, next) => {
     next();
 });
 
+const transporter = nodemailer.createTransport({
+    service: "Gmail",
+    auth: {
+        user: process.env.USER_EMAIL,
+        pass: process.env.USER_APP_PASSWORD,
+    },
+});
+
 server.post("/register", async (req, res) => {
     let user = new Users();
 
@@ -83,9 +106,18 @@ server.post("/register", async (req, res) => {
     user.password = req.body.password;
     user.confirmPassword = req.body.confirmPassword;
 
+    const verificationToken = user.generateVerificationToken();
+    const url = `http://localhost:8080/verify/${verificationToken}`;
+
+    transporter.sendMail({
+        to: user.email,
+        subject: "Verify Account",
+        html: `<p>Click <a href="${url}">here</a> to confirm your email or paste the URL in the browser: ${url}</p>`,
+    });
+
     try {
         await user.save();
-        res.json(req.body);
+        res.json("Please verify your email for account activation, Check your inbox! If not then Spam");
     } catch (error) {
         res.status(500).json({ error: "Could not register user" });
     }
@@ -152,7 +184,53 @@ server.post("/login", async (req, res) => {
         return res.json({ errors: { password: "Incorrect password" } });
     }
 
+    if (user.verified === false) {
+        return res.json({ errors: { verification: "Email not verified" } });
+    }
+
     res.json({ success: true });
+});
+
+server.get("/verify/:id", async (req, res) => {
+    const { id } = req.params; // Fix: Changed `token` to `id`
+
+    // Check we have an id
+    if (!id) {
+        return res.status(422).send({
+            message: "Missing ID",
+        });
+    }
+
+    // Step 1 - Verify the token from the URL
+    let payload = null;
+    try {
+        payload = jwt.verify(
+            id, // Fix: Changed `token` to `id`
+            process.env.TOKEN
+        );
+    } catch (err) {
+        return res.status(500).send(err);
+    }
+
+    try {
+        // Step 2 - Find user with matching ID
+        const user = await Users.findOne({ _id: payload.ID });
+        if (!user) {
+            return res.status(404).send({
+                message: "User does not exist",
+            });
+        }
+
+        // Step 3 - Update user verification status to true
+        user.verified = true;
+        await user.save();
+
+        return res.status(200).send({
+            message: "Account Verified",
+        });
+    } catch (err) {
+        return res.status(500).send(err);
+    }
 });
 
 server.post("/forgotPassword", async (req, res) => {
@@ -360,3 +438,5 @@ server.delete('/cancelOrder', async (req,res) => {
 server.listen(8080, () => {
     console.log("Server Connected");
 });
+
+server.use("/stripe", stripe);
