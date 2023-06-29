@@ -55,7 +55,7 @@ export default function Navbar() {
             <div className="container-fluid b25">
                 <div className="row align-items-center p-2 b25 text-light">
                     <div className="col-md-3 d-none d-md-block h4 my-2">
-                        (+91) 987-297-2339
+                        +1 888-888-4532
                     </div>
                     <div className="col-md-7 d-none d-md-block h2 text-center my-2">
                         Welcome to Radiant Revival!
