@@ -10,6 +10,7 @@ const ejs = require("ejs");
 const fs = require("fs");
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
+const path = require('path');
 
 main().catch((err) => console.log(err));
 
@@ -62,6 +63,12 @@ const server = express();
 
 server.use(cors());
 server.use(bodyParser.json());
+
+// Set the views directory to a custom location
+server.set("views", path.join(__dirname, "./views"));
+
+// Set the view engine
+server.set("view engine", "ejs");
 
 // CORS middleware
 server.use((req, res, next) => {
@@ -244,9 +251,11 @@ server.get("/verify/:id", async (req, res) => {
         user.verified = true;
         await user.save();
 
-        return res.status(200).send({
-            message: "Account Verified",
-        });
+        res.render("successEmailVerification.ejs");
+
+        // return res.status(200).send({
+        //     message: "Account Verified",
+        // });
     } catch (err) {
         return res.status(500).send(err);
     }
