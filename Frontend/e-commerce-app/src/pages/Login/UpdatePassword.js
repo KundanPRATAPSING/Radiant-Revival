@@ -50,7 +50,7 @@ export default function UpdatePassword() {
     };
 
     try {
-      const response = await fetch("http://localhost:8080/updatePassword", {
+      const response = await fetch("http://localhost:8080/updatePassword/updatePassword", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

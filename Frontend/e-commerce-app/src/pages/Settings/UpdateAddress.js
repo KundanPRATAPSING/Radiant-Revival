@@ -54,7 +54,7 @@ export default function UpdateAddress() {
     };
 
     try {
-      const response = await fetch("http://localhost:8080/updateProfile", {
+      const response = await fetch("http://localhost:8080/updateProfile/updateProfile", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

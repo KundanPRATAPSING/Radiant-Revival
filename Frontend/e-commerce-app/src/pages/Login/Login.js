@@ -96,7 +96,7 @@ export default function Login() {
 
   async function validateUser(loginUser) {
     try {
-      const isUser = await fetch("http://localhost:8080/login", {
+      const isUser = await fetch("http://localhost:8080/login/login", {
         method: "POST",
         body: JSON.stringify(loginUser),
         headers: {

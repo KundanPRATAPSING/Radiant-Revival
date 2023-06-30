@@ -1,43 +1,9 @@
 require("dotenv").config();
-const express = require("express");
-const Stripe = require("stripe");
-const cors = require("cors");
-const bodyParser = require("body-parser");
 
-// Replace your stripe secret key
+const {Stripe} = require("../config/imports")
+const router = require("../config/router")
+
 const stripe = Stripe(process.env.SECRET_KEY);
-
-const router = express.Router();
-
-router.use(cors());
-router.use(bodyParser.json());
-
-// CORS middleware
-router.use((req, res, next) => {
-  // Replace '*' with the appropriate origin(s) or configure it dynamically
-  res.setHeader("Access-Control-Allow-Origin", "*");
-
-  // Add other allowed methods as needed
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-
-  // Add other allowed headers as needed
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-
-  // Handle preflight request
-  if (req.method === "OPTIONS") {
-    return res.sendStatus(200);
-  }
-
-  // Set cache-control headers to prevent caching
-  res.setHeader(
-    "Cache-Control",
-    "no-store, no-cache, must-revalidate, proxy-revalidate"
-  );
-  res.setHeader("Pragma", "no-cache");
-  res.setHeader("Expires", "0");
-
-  next();
-});
 
 router.post("/create-checkout-session", async (req, res) => {
   res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");

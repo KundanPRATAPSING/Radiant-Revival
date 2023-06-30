@@ -38,7 +38,7 @@ export default function Payment(props) {
 
   async function cancelOrder() {
     try {
-      const response = await fetch("http://localhost:8080/cancelOrder", {
+      const response = await fetch("http://localhost:8080/cancelOrder/cancelOrder", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

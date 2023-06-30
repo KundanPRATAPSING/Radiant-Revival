@@ -45,7 +45,7 @@ export default function ForgotPassword() {
 
     async function validateEmail(){
         try {
-      const response = await fetch("http://localhost:8080/forgotPassword", {
+      const response = await fetch("http://localhost:8080/forgotPassword/forgotPassword", {
         method: "POST",
         body: JSON.stringify({ "email": email }),
         headers: {
