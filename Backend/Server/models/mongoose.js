@@ -43,11 +43,41 @@ const ownerSchema = new mongoose.Schema({
     customer_product_title: String,
     customer_product_description: String,
     customer_product_cost: String,
+    paid: {
+        type: Boolean,
+        required: true,
+        default: false,
+    }
 });
 
 const Owner = new mongoose.model("Owner", ownerSchema);
 
+const orderSchema = new mongoose.Schema({
+    userId: {type: String, required: true},
+    customerId: String,
+    paymentIntentId: String,
+    products: [
+        {
+            id: String,
+            image: String,
+            title: String,
+            desc: String,
+            price: String,
+            cartQuantity: {type: Number, default: 1},
+        }
+    ],
+    subtotal: {type: Number, required: true},
+    total: {type: Number, required: true},
+    shipping: {type: Object, required: true},
+    deliveryStatus: {type: String, default: "pending"},
+    paymentStatus: {type: String, required: true}
+},
+{timestamps: true})
+
+const Orders = new mongoose.model("Order", orderSchema)
+
 module.exports = {
   Owner: Owner,
-  Users: Users
+  Users: Users,
+  Orders: Orders,
 };
