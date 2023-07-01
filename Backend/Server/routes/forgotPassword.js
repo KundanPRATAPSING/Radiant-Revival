@@ -1,6 +1,6 @@
 const router = require("../config/router");
 
-const {Users} = require("../models/mongoose")
+const {Users} = require("../models/Users")
 
 router.post("/forgotPassword", async (req, res) => {
     res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");

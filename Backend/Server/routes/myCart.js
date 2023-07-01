@@ -2,7 +2,7 @@ const router = require("../config/router")
 
 const {Owner} = require("../models/Owner")
 
-router.post("/myOrders", async (req, res) => {
+router.post("/myCart", async (req, res) => {
     res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
     res.setHeader("Pragma", "no-cache");
     res.setHeader("Expires", "0");
@@ -10,7 +10,7 @@ router.post("/myOrders", async (req, res) => {
     const email = req.body.email;
 
     try {
-        const documents = await Owner.find({ customer_email: email, paid: true });
+        const documents = await Owner.find({ customer_email: email, paid: false });
 
         if (documents.length > 0) {
             // Map through the documents to extract specific information
@@ -18,7 +18,6 @@ router.post("/myOrders", async (req, res) => {
                 // Modify the properties based on your specific needs
 
                 // return only non paid orders
-
                 id: document._id,
                 customer_product_category: document.customer_product_category,
                 customer_product_title: document.customer_product_title,

@@ -28,6 +28,9 @@ server.use('/updateProfile', updateProfile)
 const customerOrders = require("./routes/customerOrders")
 server.use('/customer_orders', customerOrders)
 
+const myCart = require("./routes/myCart")
+server.use('/myCart', myCart)
+
 const myOrders = require("./routes/myOrders")
 server.use('/myOrders',  myOrders)
 

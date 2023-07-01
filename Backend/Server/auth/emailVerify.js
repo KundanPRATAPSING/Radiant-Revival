@@ -1,7 +1,7 @@
 const {jwt} = require("../config/imports")
 const router = require("../config/router")
 
-const {Users} = require("../models/mongoose")
+const {Users} = require("../models/Users")
 
 router.get("/verify/:id", async (req, res) => {
     const { id } = req.params; // Fix: Changed `token` to `id`

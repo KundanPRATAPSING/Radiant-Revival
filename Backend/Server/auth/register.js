@@ -2,7 +2,7 @@ const {bcrypt,nodemailer,ejs,fs,path} = require("../config/imports")
 const router = require("../config/router")
 const saltRounds = 10;
 
-const {Users} = require("../models/mongoose")
+const {Users} = require("../models/Users")
 
 const transporter = nodemailer.createTransport({
     service: "Gmail",

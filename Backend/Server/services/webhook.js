@@ -1,7 +1,8 @@
 require('dotenv')
 const { Stripe, express } = require("../config/imports");
 const router = require("../config/router")
-const {Orders,Owner} = require("../models/mongoose")
+const {Orders} = require("../models/Orders")
+const {Owner} = require("../models/Owner")
 
 const stripe = Stripe(process.env.SECRET_KEY);
 

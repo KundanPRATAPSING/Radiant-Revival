@@ -1,7 +1,7 @@
 const router = require("../config/router");
 
-const {Owner} = require("../models/mongoose")
-const {Users} = require("../models/mongoose")
+const {Owner} = require("../models/Owner")
+const {Users} = require("../models/Users")
 
 router.post("/customer_orders", async (req, res) => {
     res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");

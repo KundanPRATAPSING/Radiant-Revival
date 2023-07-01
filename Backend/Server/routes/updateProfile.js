@@ -1,6 +1,6 @@
 const router = require("../config/router")
 
-const {Users} = require("../models/mongoose")
+const {Users} = require("../models/Users")
 
 router.put("/updateProfile", async (req, res) => {
     const updateData = req.body; // Get the updated data from the request body

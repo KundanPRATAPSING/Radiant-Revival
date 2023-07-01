@@ -49,7 +49,7 @@ export default function Payment(props) {
       if (response.ok) {
         setDeleteRecord(!delteRecord)
         await response.json();
-        console.log("Record removed successful:");
+        console.log("Record removed successfully:");
       } else {
         await response.json();
         console.error("Deletion failed:");
@@ -139,13 +139,13 @@ export default function Payment(props) {
 
       {showCancelMessage && (
         <div className="alert alert-danger" role="alert">
-            Order Cancelled Succefully
+            Order Removing from Cart
         </div>
       )}
 
       {showPaymentMessage && (
         <div className="alert alert-success" role="alert">
-            Redirecting to Payment, please do not refresh!
+            Redirecting to Payment, Please do not Refresh!
         </div>
       )}
 

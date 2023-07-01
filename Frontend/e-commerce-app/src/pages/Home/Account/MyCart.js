@@ -23,7 +23,7 @@ export default function MyCart(props) {
       });
 
     async function fetchOrders() {
-      const response = await fetch("http://localhost:8080/myOrders/myOrders", {
+      const response = await fetch("http://localhost:8080/myCart/myCart", {
         method: "POST",
         body: JSON.stringify({ email: user.email }),
         headers: {

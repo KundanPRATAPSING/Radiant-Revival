@@ -2,7 +2,7 @@ const {bcrypt} = require("../config/imports");
 const router = require("../config/router");
 
 const saltRounds = 10;
-const {Users} = require("../models/mongoose")
+const {Users} = require("../models/Users")
 
 router.put("/updatePassword", async (req, res) => {
     const updateData = req.body; // Get the updated data from the request body

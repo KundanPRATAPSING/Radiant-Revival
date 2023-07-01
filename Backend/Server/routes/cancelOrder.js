@@ -1,6 +1,6 @@
 const router = require("../config/router")
 
-const {Owner} = require("../models/mongoose")
+const {Owner} = require("../models/Owner")
 
 router.delete("/cancelOrder", async (req, res) => {
     const id = req.body.id;

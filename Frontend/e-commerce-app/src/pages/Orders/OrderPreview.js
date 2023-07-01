@@ -161,13 +161,13 @@ const OrderPreview = () => {
 
       {showSuccessMessage && (
         <div className="alert alert-success" role="alert">
-          Added to Cart
+          Adding to Cart
         </div>
       )}
 
       {showCancelMessage && (
-        <div className="alert alert-warning" role="alert">
-          Order not added  
+        <div className="alert alert-primary" role="alert">
+          Redirecting to Department {category}
         </div>
       )}
 
