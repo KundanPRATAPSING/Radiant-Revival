@@ -4,12 +4,12 @@ import OrderPage from "../../Orders/OrderPage";
 import DepartMentName from "./DepartMentName";
 
 export default function Fragrance() {
-  const fragrance1 = require("../../../assets/images/fragrance/fragrance-1.jpeg");
-  const fragrance2 = require("../../../assets/images/fragrance/fragrance-2.jpeg");
-  const fragrance3 = require("../../../assets/images/fragrance/fragrance-6.jpeg");
-  const fragrance4 = require("../../../assets/images/fragrance/fragrance-15.jpeg");
-  const fragrance5 = require("../../../assets/images/fragrance/fragrance-19.jpeg");
-  const fragrance6 = require("../../../assets/images/fragrance/fragrance-20.jpeg");
+  const fragrance1 = "images/fragrance/fragrance-1.jpeg";
+  const fragrance2 = "images/fragrance/fragrance-2.jpeg";
+  const fragrance3 = "images/fragrance/fragrance-6.jpeg";
+  const fragrance4 = "images/fragrance/fragrance-15.jpeg";
+  const fragrance5 = "images/fragrance/fragrance-19.jpeg";
+  const fragrance6 = "images/fragrance/fragrance-20.jpeg";
   const departmentName = "Fragrance";
 
   return (

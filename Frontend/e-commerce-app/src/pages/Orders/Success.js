@@ -4,7 +4,7 @@ import '../../assets/styles/success.css';
 import { Link } from 'react-router-dom';
 
 export default function Success() {
-  const successIcon = require('../../assets/images/success.png');
+  const successIcon = "images/success.png";
 
   return (
     <motion.div className="payment-success-container" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>

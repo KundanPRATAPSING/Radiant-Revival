@@ -6,24 +6,24 @@ import Department from "./Department/Department";
 import Footer from "../../components/Footer/Footer"
 
 export default function Home() {
-  const topImage1 = require("../../assets/images/top-image-1.jpg");
-  const topImage2 = require("../../assets/images/top-image-2.jpg");
-  const topImage3 = require("../../assets/images/top-image-3.jpg");
-  const topImage4 = require("../../assets/images/top-image-4.jpg");
-  const topImage5 = require("../../assets/images/top-image-5.jpg");
+  const topImage1 = "images/top-image-1.jpg";
+  const topImage2 = "images/top-image-2.jpg";
+  const topImage3 = "images/top-image-3.jpg";
+  const topImage4 = "images/top-image-4.jpg";
+  const topImage5 = "images/top-image-5.jpg";
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Images section
-  const skinCareImage = require("../../assets/images/skinCare/skinCare0.jpeg");
-  const makeUpImage = require("../../assets/images/makeUp/makeUp0.jpeg");
-  const hairCareImage = require("../../assets/images/hairCare/hairCare0.jpeg");
-  const fragranceImage = require("../../assets/images/fragrance/fragrance0.jpeg");
-  const bodyCareImage = require("../../assets/images/bodyCare/bodyCare0.jpeg");
-  const oralCareImage = require("../../assets/images/oralCare/oralCare0.jpeg");
-  const menGroomingImage = require("../../assets/images/menGrooming/menGrooming0.jpeg");
-  const organicImage = require("../../assets/images/organic/organic0.jpeg");
-  const beautyToolsImage = require("../../assets/images/beautyTools/beautytools0.jpeg");
-  const bodyArtImage = require("../../assets/images/bodyArt/bodyArt0.jpeg");
+  const skinCareImage = "images/skinCare/skinCare0.jpeg";
+  const makeUpImage = "images/makeUp/makeUp0.jpeg";
+  const hairCareImage = "images/hairCare/hairCare0.jpeg";
+  const fragranceImage = "images/fragrance/fragrance0.jpeg";
+  const bodyCareImage = "images/bodyCare/bodyCare0.jpeg";
+  const oralCareImage = "images/oralCare/oralCare0.jpeg";
+  const menGroomingImage = "images/menGrooming/menGrooming0.jpeg";
+  const organicImage = "images/organic/organic0.jpeg";
+  const beautyToolsImage = "images/beautyTools/beautytools0.jpeg";
+  const bodyArtImage = "images/bodyArt/bodyArt0.jpeg";
 
   useEffect(() => {
     const interval = setInterval(() => {

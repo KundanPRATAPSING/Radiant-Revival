@@ -173,7 +173,7 @@ export default function SignUp() {
         <div className="LoginPageInnerContainer">
           <div className="ImageContianer">
             <img
-              src={require("../../assets/images/login_left.png")}
+              src="images/login_left.png"
               alt="Login left"
               className="GroupImage"
             />
@@ -182,7 +182,7 @@ export default function SignUp() {
             <div className="LoginFormInnerContainer">
               <div className="LogoContainer">
                 <img
-                  src={require("../../assets/images/login_in_logo.png")}
+                  src="images/login_in_logo.png"
                   className="logo"
                   alt="login-logo"
                 />
@@ -198,7 +198,7 @@ export default function SignUp() {
                 <div className="inputContainer">
                   <label className="label" htmlFor="name">
                     <img
-                      src={require("../../assets/images/name.png")}
+                      src="images/name.png"
                       className="labelIcon"
                       alt="name-logo"
                     />
@@ -226,7 +226,7 @@ export default function SignUp() {
                 <div className="inputContainer">
                   <label className="label" htmlFor="username">
                     <img
-                      src={require("../../assets/images/username.png")}
+                      src="images/username.png"
                       className="labelIcon"
                       alt="username-logo"
                     />
@@ -254,7 +254,7 @@ export default function SignUp() {
                 <div className="inputContainer">
                   <label className="label" htmlFor="address">
                     <img
-                      src={require("../../assets/images/address.png")}
+                      src="images/address.png"
                       className="labelIcon"
                       alt="address-logo"
                     />
@@ -282,7 +282,7 @@ export default function SignUp() {
                 <div className="inputContainer">
                   <label className="label" htmlFor="phoneNumber">
                     <img
-                      src={require("../../assets/images/phone_number.png")}
+                      src="images/phone_number.png"
                       className="labelIcon"
                       alt="phone-logo"
                     />
@@ -317,7 +317,7 @@ export default function SignUp() {
                 <div className="inputContainer">
                   <label className="label" htmlFor="email">
                     <img
-                      src={require("../../assets/images/login_email.png")}
+                      src="images/login_email.png"
                       className="labelIcon"
                       alt="email-logo"
                     />
@@ -345,7 +345,7 @@ export default function SignUp() {
                 <div className="inputContainer">
                   <label className="label" htmlFor="password">
                     <img
-                      src={require("../../assets/images/login_pass.png")}
+                      src="images/login_pass.png"
                       className="labelIcon"
                       alt="password-logo"
                     />
@@ -386,7 +386,7 @@ export default function SignUp() {
                 <div className="inputContainer">
                   <label className="label" htmlFor="confirmPassword">
                     <img
-                      src={require("../../assets/images/login_pass.png")}
+                      src="images/login_pass.png"
                       className="labelIcon"
                       alt="password-logo"
                     />

@@ -16,7 +16,7 @@ const OrderPreview = () => {
   const price = orderData?.price;
 
   const costPrice = `$${price}`;
-  const priceTag = require("../../assets/images/price_tag.png");
+  const priceTag = "images/price_tag.png";
   const [previousPage, setPreviousPage] = useState("");
 
   const [isSubmit, setIsSubmit] = useState(false);

@@ -127,7 +127,7 @@ export default function Login() {
         <div className="LoginPageInnerContainer">
           <div className="ImageContianer">
             <img
-              src={require("../../assets/images/login_left.png")}
+              src="images/login_left.png"
               alt="Login left"
               className="GroupImage"
             />
@@ -136,7 +136,7 @@ export default function Login() {
             <div className="LoginFormInnerContainer">
               <div className="LogoContainer">
                 <img
-                  src={require("../../assets/images/login_logo.png")}
+                  src="images/login_logo.png"
                   className="logo"
                   alt="login-logo"
                 />
@@ -176,7 +176,7 @@ export default function Login() {
                 <div className="inputContainer">
                   <label className="label" htmlFor="loginEmail">
                     <img
-                      src={require("../../assets/images/login_email.png")}
+                      src="images/login_email.png"
                       className="labelIcon"
                       alt="email-logo"
                     />
@@ -204,7 +204,7 @@ export default function Login() {
                 <div className="inputContainer">
                   <label className="label" htmlFor="loginPassword">
                     <img
-                      src={require("../../assets/images/login_pass.png")}
+                      src="images/login_pass.png"
                       className="labelIcon"
                       alt="password-logo"
                     />

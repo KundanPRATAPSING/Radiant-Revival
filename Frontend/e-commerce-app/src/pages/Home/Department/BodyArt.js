@@ -4,12 +4,12 @@ import OrderPage from "../../Orders/OrderPage";
 import DepartMentName from "./DepartMentName";
 
 export default function BodyArt() {
-  const bodyArt1 = require("../../../assets/images/bodyArt/bodyart-14.jpeg");
-  const bodyArt2 = require("../../../assets/images/bodyArt/bodyart-15.jpeg");
-  const bodyArt3 = require("../../../assets/images/bodyArt/bodyart-16.jpeg");
-  const bodyArt4 = require("../../../assets/images/bodyArt/bodyart-13.jpeg");
-  const bodyArt5 = require("../../../assets/images/bodyArt/bodyart-10.jpeg");
-  const bodyArt6 = require("../../../assets/images/bodyArt/bodyart-6.jpeg");
+  const bodyArt1 = "images/bodyArt/bodyart-14.jpeg";
+  const bodyArt2 = "images/bodyArt/bodyart-15.jpeg";
+  const bodyArt3 = "images/bodyArt/bodyart-16.jpeg";
+  const bodyArt4 = "images/bodyArt/bodyart-13.jpeg";
+  const bodyArt5 = "images/bodyArt/bodyart-10.jpeg";
+  const bodyArt6 = "images/bodyArt/bodyart-6.jpeg";
   const departmentName = "Body Art";
 
   return (

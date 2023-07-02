@@ -4,12 +4,12 @@ import OrderPage from "../../Orders/OrderPage";
 import DepartMentName from "./DepartMentName";
 
 export default function MakeUp() {
-  const makeUp1 = require("../../../assets/images/makeUp/makeup-3.jpeg");
-  const makeUp2 = require("../../../assets/images/makeUp/makeup-2.jpeg");
-  const makeUp3 = require("../../../assets/images/makeUp/makeup-9.jpeg");
-  const makeUp4 = require("../../../assets/images/makeUp/makeup-14.jpeg");
-  const makeUp5 = require("../../../assets/images/makeUp/makeup-16.jpeg");
-  const makeUp6 = require("../../../assets/images/makeUp/makeup-17.jpeg");
+  const makeUp1 = "images/makeUp/makeup-3.jpeg";
+  const makeUp2 = "images/makeUp/makeup-2.jpeg";
+  const makeUp3 = "images/makeUp/makeup-9.jpeg";
+  const makeUp4 = "images/makeUp/makeup-14.jpeg";
+  const makeUp5 = "images/makeUp/makeup-16.jpeg";
+  const makeUp6 = "images/makeUp/makeup-17.jpeg";
   const departmentName = "Make Up";
 
   return (

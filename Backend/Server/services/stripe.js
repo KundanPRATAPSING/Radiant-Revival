@@ -25,12 +25,15 @@ router.post("/create-checkout-session", async (req, res) => {
             id: JSON.stringify(item.id),
         };
 
+        // Image from github
+        const imagePath = `https://raw.githubusercontent.com/Ankit-Ransh/ImageHosting/main/${item.customer_product_image_url}`;
+
         return {
             price_data: {
                 currency: "inr",
                 product_data: {
                     name: item.customer_product_title,
-                    images: ["./success.png"],
+                    images: [imagePath],
                     description: item.customer_product_description,
                     metadata: metadata,
                 },

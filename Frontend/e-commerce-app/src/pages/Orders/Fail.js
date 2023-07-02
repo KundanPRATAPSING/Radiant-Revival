@@ -4,7 +4,7 @@ import '../../assets/styles/failure.css';
 import { motion } from 'framer-motion';
 
 export default function Fail() {
-  const failureIcon = require('../../assets/images/failure.png');
+  const failureIcon = "images/failure.png";
 
   const containerVariants = {
     hidden: { opacity: 0 },

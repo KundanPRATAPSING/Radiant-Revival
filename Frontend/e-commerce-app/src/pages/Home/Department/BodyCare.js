@@ -4,12 +4,12 @@ import OrderPage from "../../Orders/OrderPage";
 import DepartMentName from "./DepartMentName";
 
 export default function BodyCare() {
-  const bodyCare1 = require("../../../assets/images/bodyCare/bodycare-1.jpeg");
-  const bodyCare2 = require("../../../assets/images/bodyCare/bodycare-6.jpeg");
-  const bodyCare3 = require("../../../assets/images/bodyCare/bodycare-4.jpeg");
-  const bodyCare4 = require("../../../assets/images/bodyCare/bodycare-8.jpeg");
-  const bodyCare5 = require("../../../assets/images/bodyCare/bodycare-5.jpeg");
-  const bodyCare6 = require("../../../assets/images/bodyCare/bodycare-7.jpeg");
+  const bodyCare1 = "images/bodyCare/bodycare-1.jpeg";
+  const bodyCare2 = "images/bodyCare/bodycare-6.jpeg";
+  const bodyCare3 = "images/bodyCare/bodycare-4.jpeg";
+  const bodyCare4 = "images/bodyCare/bodycare-8.jpeg";
+  const bodyCare5 = "images/bodyCare/bodycare-5.jpeg";
+  const bodyCare6 = "images/bodyCare/bodycare-7.jpeg";
   const departmentName = "Body Care";
 
   return (

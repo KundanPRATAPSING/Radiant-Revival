@@ -4,12 +4,12 @@ import OrderPage from "../../Orders/OrderPage";
 import DepartMentName from "./DepartMentName";
 
 export default function SkinCare() {
-  const skinCare1 = require("../../../assets/images/skinCare/skincare-11.jpeg");
-  const skinCare2 = require("../../../assets/images/skinCare/skincare-12.jpeg");
-  const skinCare3 = require("../../../assets/images/skinCare/skincare-6.jpeg");
-  const skinCare4 = require("../../../assets/images/skinCare/skincare-7.jpeg");
-  const skinCare5 = require("../../../assets/images/skinCare/skincare-1.jpeg");
-  const skinCare6 = require("../../../assets/images/skinCare/skincare-9.jpeg");
+  const skinCare1 = "images/skinCare/skincare-11.jpeg";
+  const skinCare2 = "images/skinCare/skincare-12.jpeg";
+  const skinCare3 = "images/skinCare/skincare-6.jpeg";
+  const skinCare4 = "images/skinCare/skincare-7.jpeg";
+  const skinCare5 = "images/skinCare/skincare-1.jpeg";
+  const skinCare6 = "images/skinCare/skincare-9.jpeg";
   const departmentName = "Skin Care";
 
   return (

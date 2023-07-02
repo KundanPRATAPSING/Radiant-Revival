@@ -4,12 +4,12 @@ import OrderPage from "../../Orders/OrderPage";
 import DepartMentName from "./DepartMentName";
 
 export default function MenGrooming() {
-  const menGrooming1 = require("../../../assets/images/menGrooming/men-8.jpeg");
-  const menGrooming2 = require("../../../assets/images/menGrooming/men-2.jpeg");
-  const menGrooming3 = require("../../../assets/images/menGrooming/men-3.jpeg");
-  const menGrooming4 = require("../../../assets/images/menGrooming/men-4.jpeg");
-  const menGrooming5 = require("../../../assets/images/menGrooming/men-5.jpeg");
-  const menGrooming6 = require("../../../assets/images/menGrooming/men-9.jpeg");
+  const menGrooming1 = "images/menGrooming/men-8.jpeg";
+  const menGrooming2 = "images/menGrooming/men-2.jpeg";
+  const menGrooming3 = "images/menGrooming/men-3.jpeg";
+  const menGrooming4 = "images/menGrooming/men-4.jpeg";
+  const menGrooming5 = "images/menGrooming/men-5.jpeg";
+  const menGrooming6 = "images/menGrooming/men-9.jpeg";
   const departmentName = "Men Grooming";
 
   return (

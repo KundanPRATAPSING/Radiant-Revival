@@ -3,9 +3,9 @@ import { useLocation, useNavigate } from "react-router";
 import { getSessionData } from "../Session/Session";
 
 export default function UpdateAddress() {
-  const addressImage = require("../../assets/images/address.png");
-  const updateAddressImage = require("../../assets/images/update_address.png");
-  const loginLeftImage = require("../../assets/images/login_left.png");
+  const addressImage = "images/address.png";
+  const updateAddressImage = "images/update_address.png";
+  const loginLeftImage = "images/login_left.png";
 
   const location = useLocation();
   const profileInfo = location.state;

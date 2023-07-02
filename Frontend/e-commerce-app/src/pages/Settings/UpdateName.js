@@ -8,10 +8,10 @@ export default function UpdateName(props) {
   const navigate = useNavigate();
   const userEmail = getSessionData("userSession");
 
-  const nameImage = require("../../assets/images/name.png");
-  const newNameImage = require("../../assets/images/new_name.png");
-  const updateNameImage = require("../../assets/images/update_name.png");
-  const loginLeftImage = require("../../assets/images/login_left.png");
+  const nameImage = "images/name.png";
+  const newNameImage = "images/new_name.png";
+  const updateNameImage = "images/update_name.png";
+  const loginLeftImage = "images/login_left.png";
 
   const [newName, setNewName] = useState("");
   const [isUpdated, setIsUpdated] = useState(false);

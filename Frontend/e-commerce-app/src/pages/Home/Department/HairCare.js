@@ -4,12 +4,12 @@ import OrderPage from "../../Orders/OrderPage";
 import DepartMentName from "./DepartMentName";
 
 export default function HairCare() {
-  const hairCare1 = require("../../../assets/images/hairCare/haircare-7.jpeg");
-  const hairCare2 = require("../../../assets/images/hairCare/haircare-2.jpeg");
-  const hairCare3 = require("../../../assets/images/hairCare/haircare-8.jpeg");
-  const hairCare4 = require("../../../assets/images/hairCare/haircare-4.jpeg");
-  const hairCare5 = require("../../../assets/images/hairCare/haircare-5.jpeg");
-  const hairCare6 = require("../../../assets/images/hairCare/haircare-3.jpeg");
+  const hairCare1 = "images/hairCare/haircare-7.jpeg";
+  const hairCare2 = "images/hairCare/haircare-2.jpeg";
+  const hairCare3 = "images/hairCare/haircare-8.jpeg";
+  const hairCare4 = "images/hairCare/haircare-4.jpeg";
+  const hairCare5 = "images/hairCare/haircare-5.jpeg";
+  const hairCare6 = "images/hairCare/haircare-3.jpeg";
   const departmentName = "Hair Care";
 
   return (

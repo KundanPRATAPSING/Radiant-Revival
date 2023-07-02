@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function UpdatePassword() {
-  const loginLeftImage = require("../../assets/images/login_left.png");
-  const resetPasswordImage = require("../../assets/images/reset_password.png");
-  const loginEmailImage = require("../../assets/images/login_email.png");
-  const loginPassImage = require("../../assets/images/login_pass.png");
+  const loginLeftImage = "images/login_left.png";
+  const resetPasswordImage = "images/reset_password.png";
+  const loginEmailImage = "images/login_email.png";
+  const loginPassImage = "images/login_pass.png";
 
   const [showResetPassword, setShowResetPassword] = useState(false);
   const [resetPassword, setResetPassword] = useState("");

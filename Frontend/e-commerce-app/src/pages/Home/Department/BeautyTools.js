@@ -4,12 +4,12 @@ import DepartMentName from "./DepartMentName";
 import Navbar from "../../../components/Header/Navbar";
 
 export default function BeautyTools() {
-  const beautyTools1 = require("../../../assets/images/beautyTools/beautytools-9.jpeg");
-  const beautyTools2 = require("../../../assets/images/beautyTools/beautytools-2.jpeg");
-  const beautyTools3 = require("../../../assets/images/beautyTools/beautytools-3.jpeg");
-  const beautyTools4 = require("../../../assets/images/beautyTools/beautytools-4.jpeg");
-  const beautyTools5 = require("../../../assets/images/beautyTools/beautytools-5.jpeg");
-  const beautyTools6 = require("../../../assets/images/beautyTools/beautytools-6.jpeg");
+  const beautyTools1 = "images/beautyTools/beautytools-9.jpeg";
+  const beautyTools2 = "images/beautyTools/beautytools-2.jpeg";
+  const beautyTools3 = "images/beautyTools/beautytools-3.jpeg";
+  const beautyTools4 = "images/beautyTools/beautytools-4.jpeg";
+  const beautyTools5 = "images/beautyTools/beautytools-5.jpeg";
+  const beautyTools6 = "images/beautyTools/beautytools-6.jpeg";
   const departmentName = "Beauty Tools";
 
   return (

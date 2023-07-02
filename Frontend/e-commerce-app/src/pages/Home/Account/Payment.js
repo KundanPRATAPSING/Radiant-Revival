@@ -19,7 +19,7 @@ export default function Payment(props) {
     customer_product_cost,
   } = location.state;
 
-  const priceTag = require("../../../assets/images/price_tag.png");
+  const priceTag = "../images/price_tag.png";
 
   useEffect(() => {
     if (delteRecord) {

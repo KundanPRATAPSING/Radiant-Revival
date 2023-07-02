@@ -3,9 +3,9 @@ import { useLocation, useNavigate } from "react-router";
 import { getSessionData } from "../Session/Session";
 
 export default function UpdatePhone() {
-  const phoneImage = require("../../assets/images/phone_number.png");
-  const updatePhoneImage = require("../../assets/images/update_phone_number.png");
-  const loginLeftImage = require("../../assets/images/login_left.png");
+  const phoneImage = "images/phone_number.png";
+  const updatePhoneImage = "images/update_phone_number.png";
+  const loginLeftImage = "images/login_left.png";
 
   const location = useLocation();
   const profileInfo = location.state;

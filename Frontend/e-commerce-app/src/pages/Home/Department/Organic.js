@@ -4,12 +4,12 @@ import OrderPage from "../../Orders/OrderPage";
 import DepartMentName from "./DepartMentName";
 
 export default function Organic() {
-  const organic1 = require("../../../assets/images/organic/organic-1.jpeg");
-  const organic2 = require("../../../assets/images/organic/organic-2.jpeg");
-  const organic3 = require("../../../assets/images/organic/organic-3.jpeg");
-  const organic4 = require("../../../assets/images/organic/organic-8.jpeg");
-  const organic5 = require("../../../assets/images/organic/organic-5.jpeg");
-  const organic6 = require("../../../assets/images/organic/organic-7.jpeg");
+  const organic1 = "images/organic/organic-1.jpeg";
+  const organic2 = "images/organic/organic-2.jpeg";
+  const organic3 = "images/organic/organic-3.jpeg";
+  const organic4 = "images/organic/organic-8.jpeg";
+  const organic5 = "images/organic/organic-5.jpeg";
+  const organic6 = "images/organic/organic-7.jpeg";
   const departmentName = "Organic";
 
   return (

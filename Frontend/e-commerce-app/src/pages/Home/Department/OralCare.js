@@ -4,12 +4,12 @@ import OrderPage from "../../Orders/OrderPage";
 import DepartMentName from "./DepartMentName";
 
 export default function OralCare() {
-  const oralCare1 = require("../../../assets/images/oralCare/oralcare-5.jpeg");
-  const oralCare2 = require("../../../assets/images/oralCare/oralcare-6.jpeg");
-  const oralCare3 = require("../../../assets/images/oralCare/oralcare-3.jpeg");
-  const oralCare4 = require("../../../assets/images/oralCare/oralcare-10.jpeg");
-  const oralCare5 = require("../../../assets/images/oralCare/oralcare-2.jpeg");
-  const oralCare6 = require("../../../assets/images/oralCare/oralcare-7.jpeg");
+  const oralCare1 = "images/oralCare/oralcare-5.jpeg";
+  const oralCare2 = "images/oralCare/oralcare-6.jpeg";
+  const oralCare3 = "images/oralCare/oralcare-3.jpeg";
+  const oralCare4 = "images/oralCare/oralcare-10.jpeg";
+  const oralCare5 = "images/oralCare/oralcare-2.jpeg";
+  const oralCare6 = "images/oralCare/oralcare-7.jpeg";
   const departmentName = "Oral Care";
 
   return (
