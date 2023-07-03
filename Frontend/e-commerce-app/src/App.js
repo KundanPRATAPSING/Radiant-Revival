@@ -26,7 +26,6 @@ import MyCart from "./pages/Home/Account/MyCart";
 import MyOrders from './pages/Home/Account/MyOrders';
 import Success from './pages/Orders/Success';
 import Fail from './pages/Orders/Fail';
-import Payment from "./pages/Home/Account/Payment";
 import RequestRefund from "./pages/Home/Account/RequestRefund";
 
 export default function App() {
@@ -43,7 +42,6 @@ export default function App() {
         <Route path="/settings" element={<Settings />} />
         <Route path="/myCart" element={<MyCart />} />
         <Route path="/myOrders" element={<MyOrders />} />
-        <Route path="/payment" element={<Payment />} />
         <Route path="/requestRefund" element={<RequestRefund />} />
         <Route path="/beautyTools" element={<BeautyTools />} />
         <Route path="/bodyArt" element={<BodyArt />} />

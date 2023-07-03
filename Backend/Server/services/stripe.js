@@ -10,12 +10,18 @@ router.post("/create-checkout-session", async (req, res) => {
     res.setHeader("Pragma", "no-cache");
     res.setHeader("Expires", "0");
 
+    const cartItems = req.body.cartItems.map((item) => {
+        return {
+            id: item.id,
+        };
+    });
+
     const customer = await stripe.customers.create({
         metadata: {
             userId: req.body.userId,
-            cart: JSON.stringify(req.body.cartItems)
+            cart: JSON.stringify(cartItems),
         },
-    })
+    });
 
     const line_items = req.body.cartItems.map((item) => {
         const unit_amount =
@@ -39,7 +45,7 @@ router.post("/create-checkout-session", async (req, res) => {
                 },
                 unit_amount,
             },
-            quantity: 1,
+            quantity: item.quantity,
         };
     });
 

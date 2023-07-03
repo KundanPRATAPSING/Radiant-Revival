@@ -11,18 +11,19 @@ router.post("/customer_orders", async (req, res) => {
     // get details of the customer
     let customer = new Owner();
     const email = req.body.customer_email;
-    let flag = 0;
+    let flag = 0,customerId = "";
 
     try {
         const document = await Users.findOne({ email: email }); // Find the document by email
 
         if (document) {
+            customer.customer_id = document._id;
             customer.customer_name = document.name;
             customer.customer_username = document.username;
             customer.customer_address = document.address;
             customer.customer_phoneNumber = document.phoneNumber;
             customer.customer_email = document.email;
-            flag = 1;
+            flag = 1; customerId = document._id;
         }
     } catch (error) {
         console.error(error);
@@ -41,7 +42,7 @@ router.post("/customer_orders", async (req, res) => {
 
             try {
                 await customer.save();
-                res.status(200).json("Pending payment confirmation");
+                res.status(200).json({ customerId: customerId, message: "Pending payment confirmation" });
             } catch (error) {
                 res.status(500).json({ error: "Order Failed" });
             }

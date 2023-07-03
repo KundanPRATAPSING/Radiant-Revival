@@ -4,6 +4,7 @@ const {mongoose,main} = require("./mongoose");
 main().catch((err) => console.log(err));
 
 const ownerSchema = new mongoose.Schema({
+    customer_id: String,
     customer_name: String,
     customer_username: String,
     customer_address: String,
@@ -19,6 +20,11 @@ const ownerSchema = new mongoose.Schema({
         type: Boolean,
         required: true,
         default: false,
+    },
+    quantity: {
+        type: Number,
+        required: true,
+        default: 1,
     }
 });
 

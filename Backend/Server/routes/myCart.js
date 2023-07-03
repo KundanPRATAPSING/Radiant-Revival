@@ -25,6 +25,7 @@ router.post("/myCart", async (req, res) => {
                 customer_product_cost: document.customer_product_cost,
                 customer_product_image: document.customer_product_image,
                 customer_product_image_url: document.customer_product_image_url,
+                quantity: document.quantity,
             }));
 
             res.json(specificInfo);

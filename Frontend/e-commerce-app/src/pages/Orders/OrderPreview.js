@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import styles from "../../assets/styles/orderPreview.module.css";
 import { useLocation, Link, useNavigate } from "react-router-dom";
-import { getSessionData } from "../Session/Session";
+import { getSessionData, saveSessionData } from "../Session/Session";
 
 const OrderPreview = () => {
   const location = useLocation();
@@ -79,6 +79,8 @@ const OrderPreview = () => {
       });
 
       if (response.ok) {
+        const customerId = await response.json();
+        saveSessionData('ownerSession', { userId : customerId })
         setIsSubmit(true); // Set the flag to true upon successful submission
       } else {
         throw new Error("Order failed");

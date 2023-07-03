@@ -8,41 +8,31 @@ const stripe = Stripe(process.env.SECRET_KEY);
 
 // Create Order
 
-const createOrder = async(customer, data) => {
-    const Items = JSON.parse(customer.metadata.cart);
+const createOrder = async (customer, data) => {
+  const items = JSON.parse(customer.metadata.cart);
 
+  const itemIds = items.map((item) => item.id);
+
+  try {
+    // Update the items in the Owner collection
+    await Owner.updateMany({ _id: { $in: itemIds } }, { paid: true });
+
+    // Create a new order
     let newOrder = new Orders({
-        userId: customer.metadata.userId,
-        customerId: data.customer,
-        paymentIntentId: data.payment_intent,
-
-        // currently there is only one product payment.
-        products: {
-            id: Items[0].id,
-            image: Items[0].customer_product_image_url,
-            title: Items[0].customer_product_title,
-            desc: Items[0].customer_product_description,
-            price: Items[0].customer_product_cost,
-        },
-        subtotal: data.amount_subtotal / 100.0,
-        total: data.amount_total/ 100.0,
-        shipping: data.customer_details,
-        paymentStatus: data.payment_status,
+      userId: customer.metadata.userId,
+      customerId: data.customer,
+      paymentIntentId: data.payment_intent,
+      products: items,
+      subtotal: data.amount_subtotal / 100.0,
+      total: data.amount_total / 100.0,
+      shipping: data.customer_details,
+      paymentStatus: data.payment_status,
     });
 
-    // Update the database
-    // Only one user as payment is only per product
-    const user = await Owner.findOne({ _id: Items[0].id });
-
-    try{
-        user.paid = true;
-        await newOrder.save();
-        await user.save();
-    }
-    catch(err){
-        console.log(err)
-    }
-
+    await newOrder.save();
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 // This is your Stripe CLI webhook secret for testing your endpoint locally.
