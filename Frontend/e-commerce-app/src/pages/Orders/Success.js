@@ -21,9 +21,15 @@ export default function Success() {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
         />
-        <motion.div className="go-to-home-link" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-          <Link to="/home">Continue Shopping</Link>
-        </motion.div>
+        <div className="button-container">
+          <Link to="/home" className="continue-shopping-button">
+            Continue Shopping
+          </Link>
+          <a href="https://mail.google.com/" target="_blank" rel="noopener noreferrer" className="go-to-inbox-button">
+            Go to Inbox
+          </a>
+        </div>
+        <p className="order-summary-message">Please check your inbox for the order summary.</p>
       </motion.div>
     </motion.div>
   );

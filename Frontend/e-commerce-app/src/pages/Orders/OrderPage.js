@@ -40,7 +40,7 @@ export default function OrderPage({ departmentName, heading, content, imgUrl, im
                     <input type="hidden" name="content" value={content} />
                     <input type="hidden" name="price" value={price} />
                     <button type="submit" className="btn btn-info btn-lg btn-block">
-                        Buy Now
+                        See Details
                     </button>
                 </div>
             </form>

@@ -24,13 +24,17 @@
   margin: 2rem auto;
 }
 
-.go-to-home-link {
+.button-container {
+  display: flex;
+  justify-content: center;
   margin-top: 2rem;
 }
 
-.go-to-home-link a {
+.continue-shopping-button,
+.go-to-inbox-button {
   display: inline-block;
   padding: 0.8rem 1.5rem;
+  margin-right: 1rem;
   color: #fff;
   font-size: 1.2rem;
   text-decoration: none;
@@ -38,6 +42,16 @@
   transition: background-color 0.3s ease;
 }
 
-.go-to-home-link a:hover {
-  background-color: #dcf0f2;
+.continue-shopping-button {
+  background-color: #007bff; /* Update with desired button background color */
+}
+
+.go-to-inbox-button {
+  background-color: #28a745; /* Update with desired button background color */
+}
+
+.order-summary-message {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  color: #999;
 }
