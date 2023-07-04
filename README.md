@@ -106,6 +106,9 @@ The project utilizes the following technologies and frameworks:
 **Successful Payment**
 <img width="1378" alt="Screenshot 2023-07-01 at 9 29 48 PM" src="https://github.com/Ankit-Ransh/E-commerce/assets/98517507/54353d0b-518f-49f5-8ef9-c7d0a193b4e6">
 
+**Order Summary**
+<img width="1332" alt="Screenshot 2023-07-04 at 3 24 37 PM" src="https://github.com/Ankit-Ransh/E-commerce/assets/98517507/4f79f2b1-2663-4cc4-9080-7d1ffa3ad922">
+
 ## Precaution
 If mongoose is shutting down, run `pkill mongod`
 
