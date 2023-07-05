@@ -3,7 +3,7 @@ import "../../assets/styles/SignUp.css"
 import { Link, useNavigate } from "react-router-dom";
 import { saveSessionData, getSessionData } from "../Session/Session";
 
-const BASE_URL="https://radiant-revival.vercel.app"
+const BASE_URL = process.env.REACT_APP_BASE_URL
 
 export default function SignUp() {
   const navigate = useNavigate();

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-const BASE_URL="https://radiant-revival.vercel.app"
+const BASE_URL = process.env.REACT_APP_BASE_URL
 
 export default function UpdatePassword() {
   const loginLeftImage = "images/login_left.png";

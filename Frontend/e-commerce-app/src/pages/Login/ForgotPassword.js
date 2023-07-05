@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "../../assets/styles/forgotPassword.module.css";
 import { useNavigate } from "react-router";
 
-const BASE_URL="https://radiant-revival.vercel.app"
+const BASE_URL = process.env.REACT_APP_BASE_URL
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");

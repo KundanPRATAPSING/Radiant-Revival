@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../../assets/styles/Home.css";
 import { getSessionData } from "../../pages/Session/Session";
 
-const BASE_URL="https://radiant-revival.vercel.app"
+const BASE_URL = process.env.REACT_APP_BASE_URL
 
 export default function Navbar() {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -80,6 +80,14 @@ export default function Navbar() {
                                 aria-labelledby="dropdownMenuButton"
                             >
                                 {/* <!-- Profile  --> */}
+
+                                <Link
+                                    className="dropdown-item"
+                                    to="/home"
+                                    id="flask_home"
+                                >
+                                    Home
+                                </Link>
 
                                 <Link
                                     className="dropdown-item"
