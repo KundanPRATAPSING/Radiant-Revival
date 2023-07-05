@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { getSessionData } from "../Session/Session";
 
-const BASE_URL="http://localhost:8080"
+const BASE_URL="https://radiant-revival.vercel.app"
 
 export default function UpdatePhone() {
   const phoneImage = "images/phone_number.png";

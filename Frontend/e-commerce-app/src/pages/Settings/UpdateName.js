@@ -2,7 +2,7 @@ import { React, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { getSessionData } from "../Session/Session";
 
-const BASE_URL="http://localhost:8080"
+const BASE_URL="https://radiant-revival.vercel.app"
 
 export default function UpdateName(props) {
   const location = useLocation();

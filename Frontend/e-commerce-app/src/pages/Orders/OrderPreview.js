@@ -3,7 +3,7 @@ import styles from "../../assets/styles/orderPreview.module.css";
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import { getSessionData, saveSessionData } from "../Session/Session";
 
-const BASE_URL="http://localhost:8080"
+const BASE_URL="https://radiant-revival.vercel.app"
 
 const OrderPreview = () => {
   const location = useLocation();

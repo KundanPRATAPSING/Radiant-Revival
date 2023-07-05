@@ -6,7 +6,7 @@ import { getSessionData } from "../../Session/Session";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const BASE_URL="http://localhost:8080"
+const BASE_URL="https://radiant-revival.vercel.app"
 
 export default function MyCart() {
   const user = getSessionData("userSession");

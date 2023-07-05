@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../../assets/styles/Home.css";
 import { getSessionData } from "../../pages/Session/Session";
 
-const BASE_URL="http://localhost:8080"
+const BASE_URL="https://radiant-revival.vercel.app"
 
 export default function Navbar() {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);

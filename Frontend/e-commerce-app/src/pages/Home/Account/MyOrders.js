@@ -3,7 +3,7 @@ import { getSessionData } from "../../Session/Session";
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 
-const BASE_URL="http://localhost:8080"
+const BASE_URL="https://radiant-revival.vercel.app"
 
 export default function MyOrders(props) {
   const user = getSessionData("userSession");
