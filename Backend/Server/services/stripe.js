@@ -4,6 +4,7 @@ const { Stripe } = require("../config/imports");
 const router = require("../config/router");
 
 const stripe = Stripe(process.env.SECRET_KEY);
+const BASE_URL = process.env.FRONTEND_URL
 
 router.post("/create-checkout-session", async (req, res) => {
     res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
@@ -104,8 +105,8 @@ router.post("/create-checkout-session", async (req, res) => {
         customer: customer.id,
         line_items,
         mode: "payment",
-        success_url: "http://localhost:3000/success",
-        cancel_url: "http://localhost:3000/fail",
+        success_url: `${BASE_URL}/success`,
+        cancel_url: `${BASE_URL}/fail`,
     });
 
     res.send({ url: session.url });

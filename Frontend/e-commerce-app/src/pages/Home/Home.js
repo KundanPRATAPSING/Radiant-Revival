@@ -3,7 +3,7 @@ import Navbar from "../../components/Header/Navbar";
 import Banner from "./Components/Banner";
 import Carousel from "./Components/Carousel";
 import Department from "./Department/Department";
-import Footer from "../../components/Footer/Footer"
+import Footer from "../../components/Footer/Footer";
 
 export default function Home() {
   const topImage1 = "images/top-image-1.jpg";
@@ -215,7 +215,7 @@ export default function Home() {
 
       {/* <!-- footer --> */}
 
-        <Footer />
+      <Footer />
 
       {/* End Footer  */}
 

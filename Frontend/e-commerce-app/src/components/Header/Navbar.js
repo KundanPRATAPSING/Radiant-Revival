@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import "../../assets/styles/Home.css";
 import { getSessionData } from "../../pages/Session/Session";
 
+const BASE_URL="http://localhost:8080"
+
 export default function Navbar() {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -27,7 +29,7 @@ export default function Navbar() {
 
         if (fetchData === true) {
             async function fetchProfileData() {
-                const response = await fetch("http://localhost:8080/profile/profile", {
+                const response = await fetch(`${BASE_URL}/profile/profile`, {
                     method: "POST",
                     body: JSON.stringify(user),
                     headers: {

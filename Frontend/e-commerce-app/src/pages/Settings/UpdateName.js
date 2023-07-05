@@ -2,6 +2,8 @@ import { React, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { getSessionData } from "../Session/Session";
 
+const BASE_URL="http://localhost:8080"
+
 export default function UpdateName(props) {
   const location = useLocation();
   const profileInfo = location.state;
@@ -55,7 +57,7 @@ export default function UpdateName(props) {
     };
 
     try {
-      const response = await fetch("http://localhost:8080/updateProfile/updateProfile", {
+      const response = await fetch(`${BASE_URL}/updateProfile/updateProfile`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

@@ -1,3 +1,4 @@
+require('dotenv').config();
 const {bcrypt,nodemailer,ejs,fs,path} = require("../config/imports")
 const router = require("../config/router")
 const saltRounds = 10;
@@ -27,7 +28,8 @@ router.post("/register", async (req, res) => {
     user.password = hashPassword;
 
     const verificationToken = user.generateVerificationToken();
-    const url = `http://localhost:8080/verify/${verificationToken}/verify/${verificationToken}`;
+    const BASE_URL = process.env.BASE_URL
+    const url = `${BASE_URL}/verify/${verificationToken}/verify/${verificationToken}`;
 
     fs.readFile(path.join(__dirname, "../views/index.ejs"), "utf8", (err, template) => {
         if (err) {

@@ -1,5 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 
+const BASE_URL="http://localhost:8080"
+
 export default function CartItem({
   id,
   customer_product_image,
@@ -25,7 +27,7 @@ export default function CartItem({
     async (id) => {
       try {
         const response = await fetch(
-          "http://localhost:8080/cancelOrder/cancelOrder",
+          `${BASE_URL}/cancelOrder/cancelOrder`,
           {
             method: "DELETE",
             headers: {

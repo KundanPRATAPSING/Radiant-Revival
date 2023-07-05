@@ -3,6 +3,8 @@ import { getSessionData } from "../../Session/Session";
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 
+const BASE_URL="http://localhost:8080"
+
 export default function MyOrders(props) {
   const user = getSessionData("userSession");
   const [customerOrders, setCustomerOrders] = useState([]);
@@ -23,7 +25,7 @@ export default function MyOrders(props) {
       });
 
     async function fetchOrders() {
-      const response = await fetch("http://localhost:8080/myOrders/myOrders", {
+      const response = await fetch(`${BASE_URL}/myOrders/myOrders`, {
         method: "POST",
         body: JSON.stringify({ email: user.email }),
         headers: {

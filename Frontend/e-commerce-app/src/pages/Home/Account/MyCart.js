@@ -6,6 +6,8 @@ import { getSessionData } from "../../Session/Session";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+const BASE_URL="http://localhost:8080"
+
 export default function MyCart() {
   const user = getSessionData("userSession");
   const [customerOrders, setCustomerOrders] = useState([]);
@@ -36,7 +38,7 @@ export default function MyCart() {
       }
 
       axios
-        .post("http://localhost:8080/stripe/create-checkout-session", {
+        .post(`${BASE_URL}/stripe/create-checkout-session`, {
           userId: userId,
           cartItems,
         })
@@ -82,7 +84,7 @@ export default function MyCart() {
     async function updateQuantityInBackend(id, quantity) {
       try {
         const response = await fetch(
-          "http://localhost:8080/updateCart/updateCart",
+          `${BASE_URL}/updateCart/updateCart`,
           {
             method: "PUT",
             body: JSON.stringify({ quantity, id }),
@@ -116,7 +118,7 @@ export default function MyCart() {
       });
 
     async function fetchOrders() {
-      const response = await fetch("http://localhost:8080/myCart/myCart", {
+      const response = await fetch(`${BASE_URL}/myCart/myCart`, {
         method: "POST",
         body: JSON.stringify({ email: user.email }),
         headers: {

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
+const BASE_URL="http://localhost:8080"
+
 export default function UpdatePassword() {
   const loginLeftImage = "images/login_left.png";
   const resetPasswordImage = "images/reset_password.png";
@@ -50,7 +52,7 @@ export default function UpdatePassword() {
     };
 
     try {
-      const response = await fetch("http://localhost:8080/updatePassword/updatePassword", {
+      const response = await fetch(`${BASE_URL}/updatePassword/updatePassword`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

@@ -3,6 +3,8 @@ import "../../assets/styles/SignUp.css"
 import { Link, useNavigate } from "react-router-dom";
 import { saveSessionData, getSessionData } from "../Session/Session";
 
+const BASE_URL="http://localhost:8080"
+
 export default function SignUp() {
   const navigate = useNavigate();
   const [user, setUser] = useState({
@@ -49,7 +51,7 @@ export default function SignUp() {
 
     if (!hasValidationErrors && !hasExistingUserErrors && !isSubmit) {
       try {
-        const response = await fetch("http://localhost:8080/register/register", {
+        const response = await fetch(`${BASE_URL}/register/register`, {
           method: "POST",
           body: JSON.stringify(user),
           headers: {
@@ -135,7 +137,7 @@ export default function SignUp() {
 
   async function existingUser(users) {
     try {
-      const isUser = await fetch("http://localhost:8080/checkUser/checkUser", {
+      const isUser = await fetch(`${BASE_URL}/checkUser/checkUser`, {
         method: "POST",
         body: JSON.stringify(users),
         headers: {

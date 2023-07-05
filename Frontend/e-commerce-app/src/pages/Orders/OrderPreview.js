@@ -3,6 +3,8 @@ import styles from "../../assets/styles/orderPreview.module.css";
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import { getSessionData, saveSessionData } from "../Session/Session";
 
+const BASE_URL="http://localhost:8080"
+
 const OrderPreview = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -70,7 +72,7 @@ const OrderPreview = () => {
         customer_product_cost: costPrice,
       };
 
-      const response = await fetch("http://localhost:8080/customer_orders/customer_orders", {
+      const response = await fetch(`${BASE_URL}/customer_orders/customer_orders`, {
         method: "POST",
         body: JSON.stringify(order),
         headers: {

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import styles from "../../assets/styles/forgotPassword.module.css";
 import { useNavigate } from "react-router";
 
+const BASE_URL="http://localhost:8080"
+
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
   const [formError, setFormError] = useState({})
@@ -45,7 +47,7 @@ export default function ForgotPassword() {
 
     async function validateEmail(){
         try {
-      const response = await fetch("http://localhost:8080/forgotPassword/forgotPassword", {
+      const response = await fetch(`${BASE_URL}/forgotPassword/forgotPassword`, {
         method: "POST",
         body: JSON.stringify({ "email": email }),
         headers: {

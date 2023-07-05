@@ -3,6 +3,8 @@ import "../../assets/styles/Login.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { saveSessionData } from "../Session/Session";
 
+const BASE_URL="http://localhost:8080"
+
 export default function Login() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -96,7 +98,7 @@ export default function Login() {
 
   async function validateUser(loginUser) {
     try {
-      const isUser = await fetch("http://localhost:8080/login/login", {
+      const isUser = await fetch(`${BASE_URL}/login/login`, {
         method: "POST",
         body: JSON.stringify(loginUser),
         headers: {

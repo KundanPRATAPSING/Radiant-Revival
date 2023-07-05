@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { getSessionData } from "../Session/Session";
 
+const BASE_URL="http://localhost:8080"
+
 export default function UpdateAddress() {
   const addressImage = "images/address.png";
   const updateAddressImage = "images/update_address.png";
@@ -54,7 +56,7 @@ export default function UpdateAddress() {
     };
 
     try {
-      const response = await fetch("http://localhost:8080/updateProfile/updateProfile", {
+      const response = await fetch(`${BASE_URL}/updateProfile/updateProfile`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
