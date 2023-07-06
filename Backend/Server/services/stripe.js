@@ -11,6 +11,8 @@ router.post("/create-checkout-session", async (req, res) => {
     res.setHeader("Pragma", "no-cache");
     res.setHeader("Expires", "0");
 
+    console.log('Stripe successful')
+
     const cartItems = req.body.cartItems.map((item) => {
         return {
             id: item.id,

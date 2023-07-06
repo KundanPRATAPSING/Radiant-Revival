@@ -6,10 +6,17 @@ const saltRounds = 10;
 const {Users} = require("../models/Users")
 
 const transporter = nodemailer.createTransport({
-    service: "Gmail",
+    service: "gmail",
+    port: 465,
+    secure: true, // use TLS
+    logger: true,
+    secureConnection: false,
     auth: {
         user: process.env.USER_EMAIL,
         pass: process.env.USER_APP_PASSWORD,
+    },
+    tls: {
+        rejectUnauthorized: true,
     },
 });
 
