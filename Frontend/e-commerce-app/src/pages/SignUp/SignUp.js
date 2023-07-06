@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "../../assets/styles/SignUp.css"
+import "../../assets/styles/SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
 import { saveSessionData, getSessionData } from "../Session/Session";
 
-const BASE_URL = process.env.REACT_APP_BASE_URL
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ export default function SignUp() {
   const [toggleConfirmPassword, setToggleConfirmPassword] = useState(false);
   const [redirecting, setRedirecting] = useState(false);
 
-  const userSession = getSessionData('userSession')
+  const userSession = getSessionData("userSession");
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -33,7 +33,7 @@ export default function SignUp() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    setRedirecting(!redirecting)
+    setRedirecting(!redirecting);
 
     const [validationErrors, existingUserErrors] = await Promise.all([
       validate(user),
@@ -51,8 +51,8 @@ export default function SignUp() {
       ...existingUserErrors,
     });
 
-    if(hasValidationErrors || hasExistingUserErrors){
-        setRedirecting(!redirecting);
+    if (hasValidationErrors || hasExistingUserErrors) {
+      setRedirecting(!redirecting);
     }
 
     if (!hasValidationErrors && !hasExistingUserErrors && !isSubmit) {
@@ -66,7 +66,7 @@ export default function SignUp() {
         });
 
         if (response.ok) {
-          saveSessionData('userSession', { email: user.email })
+          saveSessionData("userSession", { email: user.email });
           setIsSubmit(true); // Set the flag to true upon successful submission
         } else {
           throw new Error("Signup request failed");
@@ -433,13 +433,6 @@ export default function SignUp() {
                   Sign Up
                 </button>
 
-                {/* Display Error Message  */}
-                {redirecting && (
-                  <div className="alert alert-primary" role="alert">
-                    "Checking user"
-                  </div>
-                )}
-
                 <header className="subHeader">
                   <p>
                     Already a member?
@@ -456,6 +449,12 @@ export default function SignUp() {
               </form>
               {/* Form Ends */}
             </div>
+            {/* Display Error Message  */}
+            {redirecting && (
+              <div className="alert alert-primary" role="alert">
+                "Checking user"
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -18,7 +18,7 @@ export default function CartItem({
   const [shouldCallHandleChange, setShouldCallHandleChange] = useState(false);
   const [deleteRecord, setDeleteRecord] = useState(false);
 
-  function handleDeleteRequest(){
+  function handleDeleteRequest(id){
     deleteRequest(id);
     window.location.reload()
   }

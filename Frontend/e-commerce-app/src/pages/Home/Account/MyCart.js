@@ -6,50 +6,49 @@ import { getSessionData } from "../../Session/Session";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const BASE_URL = process.env.REACT_APP_BASE_URL
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export default function MyCart() {
   const user = getSessionData("userSession");
   const [customerOrders, setCustomerOrders] = useState([]);
   const [initialSubtotal, setInitialSubtotal] = useState(0);
   const [cartSubtotal, setSubTotal] = useState(0);
-  const [showPaymentMessage, setShowPaymentMessage] = useState(false)
+  const [showPaymentMessage, setShowPaymentMessage] = useState(false);
 
   function handleCheckout() {
     const userId = getSessionData("ownerSession").userId.customerId;
-    setShowPaymentMessage(true)
-      const cartItems = [];
+    setShowPaymentMessage(true);
+    const cartItems = [];
 
-      for (let i = 0; i < customerOrders.length; i++) {
-        const order = customerOrders[i];
+    for (let i = 0; i < customerOrders.length; i++) {
+      const order = customerOrders[i];
 
-        const cartItem = {
-          id: order.id,
-          customer_product_category: order.customer_product_category,
-          customer_product_image_url: order.customer_product_image_url,
-          customer_product_title: order.customer_product_title,
-          customer_product_description: order.customer_product_description,
-          customer_product_cost: order.customer_product_cost,
-          customer_product_image: order.customer_product_image,
-          quantity: order.quantity,
-        };
+      const cartItem = {
+        id: order.id,
+        customer_product_category: order.customer_product_category,
+        customer_product_image_url: order.customer_product_image_url,
+        customer_product_title: order.customer_product_title,
+        customer_product_description: order.customer_product_description,
+        customer_product_cost: order.customer_product_cost,
+        customer_product_image: order.customer_product_image,
+        quantity: order.quantity,
+      };
 
-        cartItems.push(cartItem);
-      }
-
-      axios
-        .post(`${BASE_URL}/stripe/create-checkout-session`, {
-          userId: userId,
-          cartItems,
-        })
-        .then((response) => {
-          if (response.data.url) {
-            window.location.href = response.data.url;
-          }
-        })
-        .catch((err) => console.log(err.message));
+      cartItems.push(cartItem);
     }
 
+    axios
+      .post(`${BASE_URL}/stripe/create-checkout-session`, {
+        userId: userId,
+        cartItems,
+      })
+      .then((response) => {
+        if (response.data.url) {
+          window.location.href = response.data.url;
+        }
+      })
+      .catch((err) => console.log(err.message));
+  }
 
   function handleQuantityChange(
     id,
@@ -83,16 +82,13 @@ export default function MyCart() {
 
     async function updateQuantityInBackend(id, quantity) {
       try {
-        const response = await fetch(
-          `${BASE_URL}/updateCart/updateCart`,
-          {
-            method: "PUT",
-            body: JSON.stringify({ quantity, id }),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
+        const response = await fetch(`${BASE_URL}/updateCart/updateCart`, {
+          method: "PUT",
+          body: JSON.stringify({ quantity, id }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
 
         if (!response.ok) {
           throw new Error("Failed to update quantity in the backend.");
@@ -147,40 +143,40 @@ export default function MyCart() {
     <>
       <Navbar />
 
-        {customerOrders.length === 0 && (
-          <>
-            <div className="container-fluid mt-100 my-5">
-              <div className="row">
-                <div className="col-md-12">
-                  <div className="card">
-                    <div className="card-body cart">
-                      <div className="col-sm-12 empty-cart-cls text-center">
-                        <img
-                          src="https://i.imgur.com/dCdflKN.png"
-                          width="130"
-                          height="130"
-                          className="img-fluid mb-4 mr-3"
-                          alt="..."
-                        />
-                        <h3>
-                          <strong>Your Cart is Empty</strong>
-                        </h3>
-                        <h6>Explore our ever growing selection of products</h6>
-                        <Link
-                          to="/home"
-                          className="btn btn-primary cart-btn-transform m-3"
-                          data-abc="true"
-                        >
-                          Start Shopping
-                        </Link>
-                      </div>
+      {customerOrders.length === 0 && (
+        <>
+          <div className="container-fluid mt-100 my-5">
+            <div className="row">
+              <div className="col-md-12">
+                <div className="card">
+                  <div className="card-body cart">
+                    <div className="col-sm-12 empty-cart-cls text-center">
+                      <img
+                        src="https://i.imgur.com/dCdflKN.png"
+                        width="130"
+                        height="130"
+                        className="img-fluid mb-4 mr-3"
+                        alt="..."
+                      />
+                      <h3>
+                        <strong>Your Cart is Empty</strong>
+                      </h3>
+                      <h6>Explore our ever growing selection of products</h6>
+                      <Link
+                        to="/home"
+                        className="btn btn-primary cart-btn-transform m-3"
+                        data-abc="true"
+                      >
+                        Start Shopping
+                      </Link>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </>
-        )}
+          </div>
+        </>
+      )}
 
       {customerOrders.length && (
         <>
@@ -265,11 +261,11 @@ export default function MyCart() {
             </div>
           </section>
 
-            {showPaymentMessage && (
-        <div className="alert alert-success" role="alert">
-            Redirecting to Payment, Please do not Refresh!
-        </div>
-      )}
+          {showPaymentMessage && (
+            <div className="alert alert-success" role="alert">
+              Redirecting to Payment, Please do not Refresh!
+            </div>
+          )}
 
           <Footer />
         </>
