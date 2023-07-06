@@ -449,14 +449,15 @@ export default function SignUp() {
               </form>
               {/* Form Ends */}
             </div>
-            {/* Display Error Message  */}
-            {redirecting && (
-              <div className="alert alert-primary" role="alert">
-                "Checking user"
-              </div>
-            )}
           </div>
         </div>
+
+        {/* Display Error Message  */}
+        {redirecting && (
+          <div className="alert alert-primary" role="alert">
+            "Checking user"
+          </div>
+        )}
       </div>
       {/* Container Ends  */}
     </>
