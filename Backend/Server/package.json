@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js && stripe listen --forward-to https://radiant-revival.onrender.com/webhook/webhook && stripe trigger payment_intent.succeeded",
+    "dev": "nodemon index.js",
     "build": "npm i"
   },
   "keywords": [],
