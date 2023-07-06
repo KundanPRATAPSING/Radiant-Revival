@@ -19,7 +19,6 @@ const transporter = nodemailer.createTransport({
     service: "gmail",
     port: 465,
     secure: true, // use TLS
-    logger: true,
     secureConnection: false,
     auth: {
         user: process.env.USER_EMAIL,
