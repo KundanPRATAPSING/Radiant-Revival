@@ -126,7 +126,7 @@ export default function CartItem({
         </td>
         <td className="actions" data-th="">
           <div className="text-right">
-            <button className="btn btn-white border-secondary bg-white btn-md mb-2" onClick={handleDeleteRequest}>
+            <button className="btn btn-white border-secondary bg-white btn-md mb-2" onClick={()=> handleDeleteRequest(id)}>
               <i className="fas fa-trash"></i>
             </button>
           </div>

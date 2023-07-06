@@ -22,6 +22,7 @@ export default function SignUp() {
 
   const [togglePassword, setTogglePassword] = useState(false);
   const [toggleConfirmPassword, setToggleConfirmPassword] = useState(false);
+  const [redirecting, setRedirecting] = useState(false);
 
   const userSession = getSessionData('userSession')
 
@@ -32,6 +33,7 @@ export default function SignUp() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    setRedirecting(!redirecting)
 
     const [validationErrors, existingUserErrors] = await Promise.all([
       validate(user),
@@ -48,6 +50,10 @@ export default function SignUp() {
       ...validationErrors,
       ...existingUserErrors,
     });
+
+    if(hasValidationErrors || hasExistingUserErrors){
+        setRedirecting(!redirecting);
+    }
 
     if (!hasValidationErrors && !hasExistingUserErrors && !isSubmit) {
       try {
@@ -89,7 +95,6 @@ export default function SignUp() {
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmit) {
       try {
-        console.log(userSession)
         navigate("/", { state: { fromSignUp: true } });
       } catch (error) {
         // Handle navigation error
@@ -427,6 +432,13 @@ export default function SignUp() {
                 <button className="LoginButton" type="submit">
                   Sign Up
                 </button>
+
+                {/* Display Error Message  */}
+                {redirecting && (
+                  <div className="alert alert-primary" role="alert">
+                    "Checking user"
+                  </div>
+                )}
 
                 <header className="subHeader">
                   <p>
