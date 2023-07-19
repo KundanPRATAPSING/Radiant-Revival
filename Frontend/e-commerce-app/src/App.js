@@ -27,10 +27,12 @@ import MyOrders from './pages/Home/Account/MyOrders';
 import Success from './pages/Orders/Success';
 import Fail from './pages/Orders/Fail';
 import RequestRefund from "./pages/Home/Account/RequestRefund";
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App() {
 
   return (
+    <>
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
@@ -62,5 +64,7 @@ export default function App() {
         <Route path="/fail" element={<Fail />} />
       </Routes>
     </Router>
+    <Analytics />
+    </>
   );
 }
