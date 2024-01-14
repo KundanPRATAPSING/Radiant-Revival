@@ -285,6 +285,11 @@ export default function SignUp() {
                   </div>
                 )}
 
+                {/* Phone Number Format  */}
+                 <div className="alert alert-warning" role="alert">
+                    Please Enter in the format +91 XXX XXX XXXX
+                  </div>
+
                 {/* <!-- Phone Number  --> */}
                 <div className="inputContainer">
                   <label className="label" htmlFor="phoneNumber">
