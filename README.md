@@ -111,6 +111,7 @@ The project utilizes the following technologies and frameworks:
 
 ## Precaution
 If mongoose is shutting down, run `pkill mongod`
+Whenever change the domain make sure to edit ejs file in Backend/Server/Views.
 
 ## Contributing
 
